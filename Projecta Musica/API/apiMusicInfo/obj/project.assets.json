@@ -8291,23 +8291,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\fdily\\.nuget\\packages\\": {},
+    "C:\\Users\\marc\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fdily\\OneDrive\\Escritorio\\Projecte 3\\ReproductorMusica-main\\ReproductorMusica-main\\Projecta Musica\\API\\apiMusicInfo\\apiMusicInfo.csproj",
+      "projectUniqueName": "D:\\Informatica\\GrauSuperiorDAM\\C.G.S_DAM2\\Projecte3\\Projecta Musica\\API\\apiMusicInfo\\apiMusicInfo.csproj",
       "projectName": "apiMusicInfo",
-      "projectPath": "C:\\Users\\fdily\\OneDrive\\Escritorio\\Projecte 3\\ReproductorMusica-main\\ReproductorMusica-main\\Projecta Musica\\API\\apiMusicInfo\\apiMusicInfo.csproj",
-      "packagesPath": "C:\\Users\\fdily\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fdily\\OneDrive\\Escritorio\\Projecte 3\\ReproductorMusica-main\\ReproductorMusica-main\\Projecta Musica\\API\\apiMusicInfo\\obj\\",
+      "projectPath": "D:\\Informatica\\GrauSuperiorDAM\\C.G.S_DAM2\\Projecte3\\Projecta Musica\\API\\apiMusicInfo\\apiMusicInfo.csproj",
+      "packagesPath": "C:\\Users\\marc\\.nuget\\packages\\",
+      "outputPath": "D:\\Informatica\\GrauSuperiorDAM\\C.G.S_DAM2\\Projecte3\\Projecta Musica\\API\\apiMusicInfo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\fdily\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\marc\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -8316,7 +8316,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -8399,7 +8398,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
