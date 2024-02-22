@@ -59,5 +59,8 @@
 ![Accedir a prerequisits projecte](/Captures/accedirPrerequisitsProjecte.png)
 <p>Per configurar els prerequisits del projecte, hem d'accedir a les propietats del projecte i fer clic sobre el botó <i>Prerequisites</i>. Per defecte tindràs activat el Microsoft .NET Framework.</p>
 
-![Administrado Configuracio](/Captures/administradorConfiguracio.png)
+![Administrador Configuracio](/Captures/administradorConfiguracio.png)
 <p>Finalment, només ens faltarà anar a l'Administrador de configuració.  Aquest és l'apartat on es defineixen les opcions del compilador i els valors de compilació que s'utilitzen quan es compila el projecte. Les configuracions que tens per defecte són <i>Debug</i> i <i>Release</i>. La configuració <i>Release</i> admet la depuració d'una aplicació, mentre que la <i>Release</i> compila una versió de l'aplicació que es pot implementar. En aquest cas, deixem la configuració <i>Release</i> per les dos configuracions.</p>
+
+![Fitxer .exe creat](/Captures/fitxerExeCreat.png)
+<p>Finalment, només et quedarà compilar el projecte perquè se't generi el fitxer .exe i a punt per executar-lo.</p>

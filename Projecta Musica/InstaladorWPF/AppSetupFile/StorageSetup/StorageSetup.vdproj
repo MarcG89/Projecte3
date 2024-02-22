@@ -207,7 +207,7 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:Usuario"
+        "Manufacturer" = "8:DYMJ"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:StorageSetup"
@@ -748,7 +748,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_E09B19F75CD243CAA2DFBBCE3E1A165B"
             {
-            "SourcePath" = "8:..\\AppSetupFile\\obj\\Debug\\net8.0-windows\\AppSetupFile.dll"
+            "SourcePath" = "8:..\\AppSetupFile\\obj\\Release\\net8.0-windows\\AppSetupFile.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_29688C75CDE34C22B81AB750535AFCC6"
