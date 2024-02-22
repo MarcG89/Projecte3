@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TlaGXIMVbyYzrr57eTXxftXb7vrEiPZpaC/K5cXbK+plVE7QUxlYk/3dccwtdLYdR034TitWci8Hy6e2uyW60g==",
+  "dgSpecHash": "WG6MweukBcFyNSH5IG9UcY+5EeBOdRu5h2BYt5MDU4jACDVPcz9RN5U28/xjBkGEZEMDiB2DkN9NvlVEqBYK2A==",
   "success": true,
-  "projectFilePath": "D:\\Informatica\\GrauSuperiorDAM\\C.G.S_DAM2\\Projecte3\\Projecta Musica\\API\\apiMusicInfo\\apiMusicInfo.csproj",
+  "projectFilePath": "D:\\Informatica\\GrauSuperiorDAM\\C.G.S_DAM2\\Projecte3\\ProjecteMusica\\API\\apiMusicInfo\\apiMusicInfo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\marc\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\marc\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

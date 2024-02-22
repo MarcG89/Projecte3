@@ -12,12 +12,7 @@ namespace apiMusicInfo.Models.Configurations
     {
         public void Configure(EntityTypeBuilder<Album> builder)
         {
-            //builder.HasKey(sa => new { sa.AlbumName, sa.Year, sa.SongUID });
-
-            builder
-            .HasOne(a => a.Song)
-            .WithMany(s => s.Albums)
-            .HasForeignKey(a => new { a.SongUID});
+            builder.HasKey(key => new { key.Titol, key.Year });
         }
     }
 }

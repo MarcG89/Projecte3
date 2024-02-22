@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Informatica\\GrauSuperiorDAM\\C.G.S_DAM2\\Projecte3\\Projecta Musica\\API\\apiMusicInfo\\apiMusicInfo.csproj": {}
+    "D:\\Informatica\\GrauSuperiorDAM\\C.G.S_DAM2\\Projecte3\\ProjecteMusica\\API\\apiMusicInfo\\apiMusicInfo.csproj": {}
   },
   "projects": {
-    "D:\\Informatica\\GrauSuperiorDAM\\C.G.S_DAM2\\Projecte3\\Projecta Musica\\API\\apiMusicInfo\\apiMusicInfo.csproj": {
+    "D:\\Informatica\\GrauSuperiorDAM\\C.G.S_DAM2\\Projecte3\\ProjecteMusica\\API\\apiMusicInfo\\apiMusicInfo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Informatica\\GrauSuperiorDAM\\C.G.S_DAM2\\Projecte3\\Projecta Musica\\API\\apiMusicInfo\\apiMusicInfo.csproj",
+        "projectUniqueName": "D:\\Informatica\\GrauSuperiorDAM\\C.G.S_DAM2\\Projecte3\\ProjecteMusica\\API\\apiMusicInfo\\apiMusicInfo.csproj",
         "projectName": "apiMusicInfo",
-        "projectPath": "D:\\Informatica\\GrauSuperiorDAM\\C.G.S_DAM2\\Projecte3\\Projecta Musica\\API\\apiMusicInfo\\apiMusicInfo.csproj",
+        "projectPath": "D:\\Informatica\\GrauSuperiorDAM\\C.G.S_DAM2\\Projecte3\\ProjecteMusica\\API\\apiMusicInfo\\apiMusicInfo.csproj",
         "packagesPath": "C:\\Users\\marc\\.nuget\\packages\\",
-        "outputPath": "D:\\Informatica\\GrauSuperiorDAM\\C.G.S_DAM2\\Projecte3\\Projecta Musica\\API\\apiMusicInfo\\obj\\",
+        "outputPath": "D:\\Informatica\\GrauSuperiorDAM\\C.G.S_DAM2\\Projecte3\\ProjecteMusica\\API\\apiMusicInfo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

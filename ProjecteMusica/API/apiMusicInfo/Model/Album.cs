@@ -9,9 +9,11 @@ namespace apiMusicInfo.Models
     public class Album
     {
         [Key]
-        public string? AlbumName { get; set; }
+        public string? Titol { get; set; }
         public int Year { get; set; } 
-        public Guid SongUID { get; set; } 
-        public Song? Song { get; set; }
+        public string Gender { get; set; }
+        public string FrontCover { get; set; }
+        public string BackCover { get; set; }
+        public ICollection<Song>? Songs { get; set; }
     }
 }
