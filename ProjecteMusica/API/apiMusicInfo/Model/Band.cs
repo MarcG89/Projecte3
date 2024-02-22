@@ -5,7 +5,6 @@ namespace apiMusicInfo.Models
 {
     public class Band
     {
-        [Key]
         [MaxLength(15)]
         public string Name { get; set; }=null!;
         public DateTime FoundationDate { get; set; }
