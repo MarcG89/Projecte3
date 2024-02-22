@@ -34,7 +34,7 @@
 ![ShortCut afegida](/Captures/shortCutAfegida.png)
 <p>Per afegir un shortcut (en aquest cas es diu <i>AppSetupFile</i>), has de fer clic dret al fitxer <i>.exe</i> i després escollir la primera opció (que et dirà <i>Create Shortcut</i>). Pots canviar-li el nom sempre que vulguis.</p>
 
-<h3>Afegir i assignar icona al Shortcut<h3>
+<h3>Afegir i assignar icona al Shortcut</h3>
 
 ![Icona ShortCut afegida](/Captures/iconaShortCutAfegida.png)
 
