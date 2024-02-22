@@ -1,0 +1,2 @@
+./ProjecteMusica/API/ApiMongoMusica/bin
+./ProjecteMusica/API/ApiMongoMusica/obj

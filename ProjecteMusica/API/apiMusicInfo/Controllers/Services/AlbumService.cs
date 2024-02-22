@@ -1,14 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using apiMusicInfo.Data;
 using apiMusicInfo.Models;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
-namespace apiMusicInfo.Controllers.Services
+namespace apiMusicInfo.Services
 {
     public class AlbumService
     {
@@ -19,65 +15,33 @@ namespace apiMusicInfo.Controllers.Services
             _context = context;
         }
 
-        public async Task<ActionResult<IEnumerable<Album>>> GetAlbums()
+        public async Task<List<Album>> GetAlbums()
         {
             return await _context.Albums.ToListAsync();
         }
 
-        public async Task<List<Album>?> GetAlbums(string AlbumName, int year)
+        public async Task<Album> GetAlbum(string title)
         {
-            var albums = await _context.Albums.Where(a => a.AlbumName == AlbumName && a.Year == year)
-                .ToListAsync();
-            if (albums == null)
-            {
-                return null;
-            }
-
-            return albums;
+            return await _context.Albums.FindAsync(title);
         }
 
-        public async Task<IActionResult?> PutAlbum(int year, Album album)
-        {
-            if (year != album.Year)
-            {
-                return null;
-            }
-
-            _context.Entry(album).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-
-            return null;
-        }
-
-        public async Task<ActionResult<Album>?> PostAlbum(Album album)
+        public async Task CreateAlbum(Album album)
         {
             _context.Albums.Add(album);
             await _context.SaveChangesAsync();
-
-            return null;
         }
 
-        
-        public async Task<ActionResult<Album>?> DeleteAlbum(int id)
+        public async Task UpdateAlbum(Album album)
         {
-            var album = await _context.Albums.FindAsync(id);
-            if (album == null)
-            {
-                return null;
-            }
-
-            _context.Albums.Remove(album);
+            _context.Entry(album).State = EntityState.Modified;
             await _context.SaveChangesAsync();
-
-            return null;
         }
-    }   
+
+        public async Task DeleteAlbum(string title)
+        {
+            var albumToDelete = await _context.Albums.FindAsync(title);
+            _context.Albums.Remove(albumToDelete);
+            await _context.SaveChangesAsync();
+        }
+    }
 }

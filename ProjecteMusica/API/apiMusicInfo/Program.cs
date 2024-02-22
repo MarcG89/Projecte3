@@ -2,6 +2,7 @@ using System.Text.Json.Serialization;
 using apiMusicInfo.Data;
 using Microsoft.EntityFrameworkCore;
 using apiMusicInfo.Controllers.Services;
+using apiMusicInfo.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
