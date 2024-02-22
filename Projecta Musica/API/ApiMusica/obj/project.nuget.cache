@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3SpK4E2kvN6fLCA0IsrVc8qLroeP3KEbt9hW3UUC1MbLplwRx/4sO3GJE8e512rdvz7PyKaXtlk+vFSbDAB9WQ==",
+  "dgSpecHash": "32sYhoDPmRi0wzA2uTWiZMLWmR/FNt0UFl69k9kTNAYPsKHOUYjdxItu1gLiXiFkP/olZlixP/RW2PEAskRXNQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\fdily\\OneDrive\\Escritorio\\Projecte 3\\ReproductorMusica-main\\ReproductorMusica-main\\Projecta Musica\\API\\ApiMusica\\ApiMusica.csproj",
+  "projectFilePath": "C:\\Users\\fdily\\OneDrive\\Escritorio\\Projecte 3\\Projecte3\\Projecta Musica\\API\\ApiMusica\\ApiMusica.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\fdily\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\fdily\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
