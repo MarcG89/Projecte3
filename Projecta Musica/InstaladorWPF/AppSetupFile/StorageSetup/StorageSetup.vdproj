@@ -15,7 +15,7 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_9C24F31ED57446378F7A60356F47F32E"
+        "MsmKey" = "8:_3D755BEBEB994A6EAAD199B716CCEF80"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -50,6 +50,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -74,6 +82,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -106,10 +122,10 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9C24F31ED57446378F7A60356F47F32E"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3D755BEBEB994A6EAAD199B716CCEF80"
             {
-            "SourcePath" = "8:..\\..\\..\\..\\Captures\\iconaShortcut.png"
-            "TargetName" = "8:iconaShortcut.png"
+            "SourcePath" = "8:..\\..\\..\\..\\Captures\\iconaShortCut.ico"
+            "TargetName" = "8:iconaShortCut.ico"
             "Tag" = "8:"
             "Folder" = "8:_29688C75CDE34C22B81AB750535AFCC6"
             "Condition" = "8:"
@@ -314,7 +330,7 @@
             "Target" = "8:_E09B19F75CD243CAA2DFBBCE3E1A165B"
             "Folder" = "8:_29688C75CDE34C22B81AB750535AFCC6"
             "WorkingFolder" = "8:_29688C75CDE34C22B81AB750535AFCC6"
-            "Icon" = "8:"
+            "Icon" = "8:_3D755BEBEB994A6EAAD199B716CCEF80"
             "Feature" = "8:"
             }
         }

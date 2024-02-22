@@ -38,9 +38,11 @@
 
 ![Icona ShortCut afegida](/Captures/iconaShortCutAfegida.png)
 
-<p>En cas de que vulguis afegir una icona al Shortcut, ho pots fer anant a l'opció <i>Add</i> i, dins d'aquesta, triar l'opció <i>File</i> per després buscar la imatge que vols afegir. La que utilitzarem en aquest projecte és la que veus sota aquest paràgraf.</p>
+<p>En cas de que vulguis afegir una icona al Shortcut, has de fer clic drent, anar a l'opció <i>Add</i> i, dins d'aquesta, triar l'opció <i>File</i> per després buscar el fitxer que vols afegir. La que utilitzarem en aquest projecte és la que veus sota aquest paràgraf. Tingues en compte que només podràs utilitzar fitxers de tipus .ico</p>
 
 ![Icona ShortCut a utilitzar](/Captures/iconaShortCut.png)
 
-<p>Ja només ens falta vincular la icona amb el Shortcut, ho aconsegueixes fent clic dret sobre el ShortCut accedint a la <i>Properties Window</i> i finalment afegint la icona dins de l'atribut <i>Icon</i>. Tingues en compte que només podràs afegir fitxers de tipus .ico
+![PropertiesWindow de ShortCut](/Captures/shortCutPropertiesWindow.png)
+
+<p>Ja només ens falta vincular la icona amb el Shortcut, ho aconsegueixes fent clic dret sobre el ShortCut accedint a la <i>Properties Window</i> i finalment afegint la icona dins de l'atribut <i>Icon</i>.</p>
 
