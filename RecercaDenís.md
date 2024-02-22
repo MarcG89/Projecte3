@@ -46,7 +46,15 @@
 
 <p>Ja només ens falta vincular la icona amb el Shortcut, ho aconsegueixes fent clic dret sobre el ShortCut accedint a la <i>Properties Window</i> i finalment afegint la icona dins de l'atribut <i>Icon</i>.</p>
 
-![PropertiesWindow de ShortCut](/Captures/shortCutDinsDeUsersDesktop.png)
-![PropertiesWindow de ShortCut](/Captures/shortCutDinsDeUsersProgramsMenu.png)
+![Guardar ShortCut al User's Desktop](/Captures/shortCutDinsDeUsersDesktop.png)
+![Guardar ShortCut al User's Programs Menu](/Captures/shortCutDinsDeUsersProgramsMenu.png)
 
 <p>Quan ja tinguis la icona afegida al ShortCut, mou aquest dins de la carpeta <i>User's desktop</i> i crear una altre ShortCut amb la mateixa icona per també afegir-la dins de la carpeta <i>User's Programs Menu</i> o la carpeta del menú del programa.</p>
+
+![Propietats de StorageSetUp](/Captures/propietatsStorageSetUp.png)
+<p>Si vols, pots configurar les propietats del projecte de l'StorageSetup com ara el nom de l'autor o una descripció</p>
+
+<h2>Prerequisits</h2>
+
+![Accedir a prerequisits projecte](/Captures/accedirPrerequisitsProjecte.png)
+<p>Per configurar els prerequisits del projecte, hem d'accedir a les propietats del projecte i fer clic sobre el botó <i></i>.
