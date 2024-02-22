@@ -21,6 +21,7 @@ namespace apiMusicInfo.Data
             modelBuilder.ApplyConfiguration(new PlaylistConfigurations());
             modelBuilder.ApplyConfiguration(new InstrumentConfigurations());
             modelBuilder.ApplyConfiguration(new AlbumConfigurations());
+            modelBuilder.ApplyConfiguration(new BandConfigurations());
         }
 
         public DbSet<Musician> Musician { get; set; } = null!;

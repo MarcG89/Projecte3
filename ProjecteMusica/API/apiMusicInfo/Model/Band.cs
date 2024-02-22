@@ -8,7 +8,9 @@ namespace apiMusicInfo.Models
         [Key]
         [MaxLength(15)]
         public string Name { get; set; }=null!;
+        public DateTime FoundationDate { get; set; }
         [MaxLength(15)]
+        public 
         public string? Origin { get; set; }
         [MaxLength(15)]
         public string? Genre { get; set; }
