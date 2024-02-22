@@ -6,6 +6,7 @@ namespace apiMusicInfo.Models
     public class Play
     {
         public string? Bandname { get; set; }
+        public DateTime BandDateFoundation { get; set; }
         public Band? Band { get; set; }
 
         public string? MusicianName { get; set; }

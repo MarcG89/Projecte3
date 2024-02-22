@@ -24,8 +24,8 @@ namespace apiMusicInfo.Models.Configurations
 
             builder.HasOne(p => p.Band)
                 .WithMany(b => b.Plays)
-                .HasForeignKey(p => p.Bandname)
-                .HasPrincipalKey(b => b.Name);
+                .HasForeignKey(p => new { p.BandName, p.BandDateFoundation })
+                .HasPrincipalKey(b => new { b.Name, b.FoundationDate });
         }
     }
 }
