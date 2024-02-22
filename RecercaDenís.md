@@ -33,3 +33,10 @@
 
 ![Fitxer Exe Projecte Setup](/Captures/shortCutAfegida.png)
 <p>Per afegir un shortcut (en aquest cas es diu <i>AppSetupFile</i>), hauràs de fer clic dret al fitxer <i>.exe</i> i després escollir la primera opció (que et dirà <i>Create Shortcut</i>). Podràs canviar-li el nom sempre que vulguis.</p>
+
+<h3>Afegir icona al Shortcut<h3>
+
+![Icona ShortCut afegida](/Captures/iconaShortCutAfegida.png)
+<p>En cas de que vulguis afegir una icona al Shortcut, ho pots fer anant a l'opció <i>Add</i> i, dins d'aquesta, triar l'opció <i>File</i> per després buscar la imatge que voldràs afegir. La que utilitzarem en aquest projecte serà la que veus sota d'aquest paràgraf.</p>
+
+![Fitxer Exe Projecte Setup](/Captures/iconaShortCut.png)
