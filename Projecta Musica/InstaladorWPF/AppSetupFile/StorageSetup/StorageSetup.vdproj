@@ -319,6 +319,20 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_719A0D77053F4049BFD0782A7E9604C5"
+            {
+            "Name" = "8:AppSetupFile"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_E09B19F75CD243CAA2DFBBCE3E1A165B"
+            "Folder" = "8:_103A81CD59C844DEBE435B5314ED17D9"
+            "WorkingFolder" = "8:_29688C75CDE34C22B81AB750535AFCC6"
+            "Icon" = "8:_3D755BEBEB994A6EAAD199B716CCEF80"
+            "Feature" = "8:"
+            }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_9794F514780F4B59991F370DA99F6C50"
             {
             "Name" = "8:AppSetupFile"
@@ -328,7 +342,7 @@
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
             "Target" = "8:_E09B19F75CD243CAA2DFBBCE3E1A165B"
-            "Folder" = "8:_29688C75CDE34C22B81AB750535AFCC6"
+            "Folder" = "8:_B227A236A37A4680A3ECE854B12B0858"
             "WorkingFolder" = "8:_29688C75CDE34C22B81AB750535AFCC6"
             "Icon" = "8:_3D755BEBEB994A6EAAD199B716CCEF80"
             "Feature" = "8:"

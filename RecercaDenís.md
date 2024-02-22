@@ -46,3 +46,7 @@
 
 <p>Ja només ens falta vincular la icona amb el Shortcut, ho aconsegueixes fent clic dret sobre el ShortCut accedint a la <i>Properties Window</i> i finalment afegint la icona dins de l'atribut <i>Icon</i>.</p>
 
+![PropertiesWindow de ShortCut](/Captures/shortCutDinsDeUsersDesktop.png)
+![PropertiesWindow de ShortCut](/Captures/shortCutDinsDeUsersProgramsMenu.png)
+
+<p>Quan ja tinguis la icona afegida al ShortCut, mou aquest dins de la carpeta <i>User's desktop</i> i crear una altre ShortCut amb la mateixa icona per també afegir-la dins de la carpeta <i>User's Programs Menu</i> o la carpeta del menú del programa.</p>
