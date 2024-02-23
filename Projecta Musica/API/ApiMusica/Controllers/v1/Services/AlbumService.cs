@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using ApiMusica.Classes.Model;
+using Microsoft.AspNetCore.Http;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDB.Driver.GridFS;
@@ -17,28 +17,37 @@ namespace ApiMusica.Controllers.v1.Services
         public AlbumService(IMongoDatabase database)
         {
             _albumCollection = database.GetCollection<Album>("Album");
-
-            // Configurar GridFSBucket
             _gridFSBucket = new GridFSBucket(database);
         }
 
-        // Método para crear un nuevo álbum
-        public async Task CreateAlbum(Album album)
+        public async Task CreateAlbumWithImages(Album album)
         {
+            // Guardar el álbum en la colección de álbumes
             await _albumCollection.InsertOneAsync(album);
-        }
-        // Método para subir imágenes a GridFS
-        public async Task<ObjectId> SubirImagenAsync(IFormFile imagen, string nombreArchivo)
-        {
-            using (var stream = new MemoryStream())
-            {
-                await imagen.CopyToAsync(stream);
-                stream.Seek(0, SeekOrigin.Begin); // Reiniciar la posición del flujo
 
-                // Opciones para la carga de GridFS
+            // Subir la portada a GridFS
+            ObjectId frontCoverId = await SubirImagenAsync(album.FrontCover, "FrontCover", "image/jpeg");
+
+            // Subir la contraportada a GridFS
+            ObjectId backCoverId = await SubirImagenAsync(album.BackCover, "BackCover", "image/jpeg");
+
+            // Actualizar los ObjectIds de las imágenes en el álbum
+
+            // Actualizar el álbum en la colección
+            var filter = Builders<Album>.Filter.Eq("_id", album.Titol);
+            var update = Builders<Album>.Update
+                .Set("FrontCoverId", frontCoverId)
+                .Set("BackCoverId", backCoverId);
+            await _albumCollection.UpdateOneAsync(filter, update);
+        }
+
+        public async Task<ObjectId> SubirImagenAsync(byte[] imagen, string nombreArchivo, string contentType)
+        {
+            using (var stream = new MemoryStream(imagen))
+            {
                 var options = new GridFSUploadOptions
                 {
-                    Metadata = new BsonDocument("contentType", imagen.ContentType) // Opcional: Puedes agregar metadatos adicionales
+                    Metadata = new BsonDocument("contentType", contentType)
                 };
 
                 return await _gridFSBucket.UploadFromStreamAsync(nombreArchivo, stream, options);
