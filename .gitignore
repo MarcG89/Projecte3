@@ -1,5 +1,11 @@
 ./ProjecteMusica/API/ApiMongoMusica/bin
 ./ProjecteMusica/API/ApiMongoMusica/obj
-Projecta Musica/InstaladorWPF/AppSetupFile/.vs
-Projecta Musica/InstaladorWPF/AppSetupFile/AppSetupFile/bin
-Projecta Musica/InstaladorWPF/AppSetupFile/AppSetupFile/obj
+./ProjecteMusica/InstaladorWPF/AppSetupFile/.vs
+./ProjecteMusica/InstaladorWPF/AppSetupFile/AppSetupFile/bin
+./ProjecteMusica/InstaladorWPF/AppSetupFile/AppSetupFile/obj
+./ProjecteMusica/MusicalyAdminApp/.vs
+./ProjecteMusica/MusicalyAdminApp/bin
+./ProjecteMusica/MusicalyAdminApp/obj
+./ProjecteMusica/MusicPlayerLibrary/.vs
+./ProjecteMusica/MusicPlayerLibrary/bin
+./ProjecteMusica/MusicPlayerLibrary/obj
