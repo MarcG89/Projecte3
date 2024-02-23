@@ -18,6 +18,7 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
+
         <StackPanel Grid.Column="0" Orientation="Horizontal">
             <Button x:Name="btAccept" Content="Acceptar" Height="30" />
         </StackPanel>

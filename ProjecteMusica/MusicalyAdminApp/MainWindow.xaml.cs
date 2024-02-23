@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.IO;
+using System.Net;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -26,13 +29,22 @@ namespace MusicalyAdminApp
 
             if (IsLoaded)
             {
-
+                string path = @"./afasfa";
+                /*if (!Directory.Exists(path))
+                {*/
+                    ChooseDockerAndApi cda = new ChooseDockerAndApi();
+                    cda.Show();
+                    Close();
+                /*}
+                else
+                {*/
+                    apiSql = new Apisql();
+                    // Initialize and display songs and albums.
+                    ShowSongs();
+                    ShowAlbums();
+                    WindowState = WindowState.Maximized;
+                //}
             }
-            apiSql = new Apisql();
-            // Initialize and display songs and albums.
-            ShowSongs();
-            ShowAlbums();
-            WindowState = WindowState.Maximized;
         }
 
         /// <summary>
