@@ -10,36 +10,44 @@
         <ImageBrush ImageSource="https://i.pinimg.com/736x/39/c7/1e/39c71e43cd06601a698edc75859dd674.jpg"/>
     </Window.Background>
     <Grid>
+        <TabControl>
+            <TabItem Header="Page Docker">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button x:Name="btAccept" Content="Acceptar" Height="30" />
+                    </StackPanel>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <local:MenuDocker />
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Page API" IsEnabled="False">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <local:MenuAPI x:Name="menuApiSQL" />
+                    </StackPanel>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+                    <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <local:MenuAPI x:Name="menuApiAudio" />
+                    </StackPanel>
 
-        <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button x:Name="btAccept" Content="Acceptar" Height="30" />
-        </StackPanel>
+                    <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <local:MenuAPI x:Name="menuApiHistorial" />
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+        </TabControl>
 
-        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
-            <local:MenuDocker />
-        </StackPanel>
-
-        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
-            <local:MenuAPI x:Name="menuApiSQL" />
-        </StackPanel>
-
-        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
-            <local:MenuAPI x:Name="menuApiAudio" />
-        </StackPanel>
-
-        <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
-            <local:MenuAPI x:Name="menuApiHistorial" />
-        </StackPanel>
     </Grid>
 </Window>
