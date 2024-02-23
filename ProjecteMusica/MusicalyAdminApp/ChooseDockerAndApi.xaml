@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:MusicalyAdminApp"
         mc:Ignorable="d"
         Title="ChooseDockerAndApi" Height="450" Width="800">
+    <Window.Background>
+        <ImageBrush ImageSource="https://i.pinimg.com/736x/39/c7/1e/39c71e43cd06601a698edc75859dd674.jpg"/>
+    </Window.Background>
     <Grid>
 
         <Grid.ColumnDefinitions>
@@ -19,9 +22,24 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Column="0" Orientation="Horizontal">
-            <local:MenuDocker />
+        <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
             <Button x:Name="btAccept" Content="Acceptar" Height="30" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
+            <local:MenuDocker />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
+            <local:MenuAPI x:Name="menuApiSQL" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <local:MenuAPI x:Name="menuApiAudio" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <local:MenuAPI x:Name="menuApiHistorial" />
         </StackPanel>
     </Grid>
 </Window>
