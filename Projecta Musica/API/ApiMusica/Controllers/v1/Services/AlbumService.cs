@@ -20,31 +20,18 @@ namespace ApiMusica.Controllers.v1.Services
             _gridFSBucket = new GridFSBucket(database);
         }
 
-        public async Task CreateAlbumWithImages(Album album)
+        public async Task CreateAlbum(Album album)
         {
-            // Guardar el álbum en la colección de álbumes
             await _albumCollection.InsertOneAsync(album);
-
-            // Subir la portada a GridFS
-            ObjectId frontCoverId = await SubirImagenAsync(album.FrontCover, "FrontCover", "image/jpeg");
-
-            // Subir la contraportada a GridFS
-            ObjectId backCoverId = await SubirImagenAsync(album.BackCover, "BackCover", "image/jpeg");
-
-            // Actualizar los ObjectIds de las imágenes en el álbum
-
-            // Actualizar el álbum en la colección
-            var filter = Builders<Album>.Filter.Eq("_id", album.Titol);
-            var update = Builders<Album>.Update
-                .Set("FrontCoverId", frontCoverId)
-                .Set("BackCoverId", backCoverId);
-            await _albumCollection.UpdateOneAsync(filter, update);
         }
 
-        public async Task<ObjectId> SubirImagenAsync(byte[] imagen, string nombreArchivo, string contentType)
+        public async Task<ObjectId> SubirImagenAsync(IFormFile imagen, string nombreArchivo, string contentType)
         {
-            using (var stream = new MemoryStream(imagen))
+            using (var stream = new MemoryStream())
             {
+                await imagen.CopyToAsync(stream);
+                stream.Seek(0, SeekOrigin.Begin);
+
                 var options = new GridFSUploadOptions
                 {
                     Metadata = new BsonDocument("contentType", contentType)
@@ -52,6 +39,15 @@ namespace ApiMusica.Controllers.v1.Services
 
                 return await _gridFSBucket.UploadFromStreamAsync(nombreArchivo, stream, options);
             }
+        }
+
+        public async Task<Album> GetByTitol(string titol)
+        {
+            return await _albumCollection.Find(album => album.Titol == titol).FirstOrDefaultAsync();
+        }
+        public async Task<List<Album>> GetAll()
+        {
+            return await _albumCollection.Find(_ => true).ToListAsync();
         }
     }
 }
