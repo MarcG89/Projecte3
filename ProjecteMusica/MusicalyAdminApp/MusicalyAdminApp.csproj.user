@@ -7,7 +7,7 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="ChooseDocker.xaml.cs">
+    <Compile Update="ChooseDockerAndApi.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="ControllerUser\AlbumInfo.xaml.cs">
@@ -17,6 +17,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="ControllerUser\InstrumentInfo.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ControllerUser\MenuDocker.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="ControllerUser\MusicianInfo.xaml.cs">
@@ -45,7 +48,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="ChooseDocker.xaml">
+    <Page Update="ChooseDockerAndApi.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ControllerUser\AlbumInfo.xaml">
@@ -55,6 +58,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ControllerUser\InstrumentInfo.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ControllerUser\MenuDocker.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ControllerUser\MusicianInfo.xaml">
