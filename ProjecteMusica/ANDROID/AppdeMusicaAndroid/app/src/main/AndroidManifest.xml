@@ -40,6 +40,9 @@
             android:name=".View.MusicPlayerActivity"
             android:exported="false" />
         <activity
+            android:name=".View.AlbumActivity"
+            android:exported="false" />
+        <activity
             android:name=".View.CurrentActivity"
             android:exported="false"
             android:label="@string/title_activity_current"

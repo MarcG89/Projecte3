@@ -20,7 +20,7 @@ class Playlist : AppCompatActivity() {
     data class Playlist(val name: String, val artist: String)
 
     private val playlists = mutableListOf(
-        Playlist("Favorites", "Tus canciones preferidas")
+        Playlist("Favoritos", "Tus canciones preferidas")
     )
 
     private lateinit var adapter: PlaylistAdapter
@@ -60,6 +60,10 @@ class Playlist : AppCompatActivity() {
 
         binding.CrearCanco.setOnClickListener {
             val intent = Intent(this@Playlist, UploadSongActivity::class.java)
+            startActivity(intent)
+        }
+        binding.Albums.setOnClickListener{
+            val intent = Intent(this@Playlist, AlbumActivity::class.java)
             startActivity(intent)
         }
     }

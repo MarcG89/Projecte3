@@ -56,13 +56,17 @@ class CurrentActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.Albums.setOnClickListener {
+        binding.Playlists.setOnClickListener {
             val intent = Intent(this@CurrentActivity, Playlist::class.java)
             startActivity(intent)
         }
 
         binding.CrearCanco.setOnClickListener {
             val intent = Intent(this@CurrentActivity, UploadSongActivity::class.java)
+            startActivity(intent)
+        }
+        binding.Albums.setOnClickListener{
+            val intent = Intent(this@CurrentActivity, AlbumActivity::class.java)
             startActivity(intent)
         }
     }

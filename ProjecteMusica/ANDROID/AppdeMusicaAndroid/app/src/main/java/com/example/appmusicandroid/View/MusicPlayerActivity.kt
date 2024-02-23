@@ -57,7 +57,6 @@ class MusicPlayerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMusicPlayerBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         val findMusic = FindMusic()
         viewModel.getMusicFile(findMusic, this)
         counterPositon = getPosition()
@@ -72,14 +71,14 @@ class MusicPlayerActivity : AppCompatActivity() {
         }
     }
 
-    override fun onResume() {
-        super.onResume()
+        override fun onResume() {
+            super.onResume()
 
-        CoroutineScope(Dispatchers.Main).launch {
-            initSeekBar()
+            CoroutineScope(Dispatchers.Main).launch {
+                initSeekBar()
+            }
+            seekBarChange()
         }
-        seekBarChange()
-    }
 
     private fun getMusic(position: Int){
         viewModel.musicList.observe(this) {
@@ -121,7 +120,6 @@ class MusicPlayerActivity : AppCompatActivity() {
     private fun setTextDuration(){
         binding.textDuration.text = mediaPlayer!!.duration.let { timestampToMSS(it) }
     }
-
     @SuppressLint("SetTextI18n")
     private suspend fun currentTextTime() {
         while (true){

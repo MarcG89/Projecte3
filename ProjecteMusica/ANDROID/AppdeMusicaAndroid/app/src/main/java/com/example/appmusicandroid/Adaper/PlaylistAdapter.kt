@@ -31,6 +31,7 @@ class PlaylistAdapter(private val playlists: List<Playlist.Playlist>) : Recycler
     }
 
     override fun getItemCount() = playlists.size
+
     inner class PlaylistViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val textName: TextView = itemView.findViewById(R.id.textName)
         val artistName: TextView = itemView.findViewById(R.id.artistName)

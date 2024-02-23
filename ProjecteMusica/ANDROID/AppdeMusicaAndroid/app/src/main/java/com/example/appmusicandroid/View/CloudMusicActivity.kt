@@ -54,13 +54,17 @@ class CloudMusicActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.Albums.setOnClickListener {
+        binding.Playlists.setOnClickListener {
             val intent = Intent(this@CloudMusicActivity, Playlist::class.java)
             startActivity(intent)
         }
 
         binding.CrearCanco.setOnClickListener {
             val intent = Intent(this@CloudMusicActivity, UploadSongActivity::class.java)
+            startActivity(intent)
+        }
+        binding.Albums.setOnClickListener{
+            val intent = Intent(this@CloudMusicActivity, AlbumActivity::class.java)
             startActivity(intent)
         }
     }

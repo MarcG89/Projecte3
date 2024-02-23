@@ -94,6 +94,10 @@ class UploadSongActivity : AppCompatActivity() {
             val intent = Intent(this@UploadSongActivity, Playlist::class.java)
             startActivity(intent)
         }
+        binding.Albums.setOnClickListener{
+            val intent = Intent(this@UploadSongActivity, AlbumActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun openAudioSelector() {

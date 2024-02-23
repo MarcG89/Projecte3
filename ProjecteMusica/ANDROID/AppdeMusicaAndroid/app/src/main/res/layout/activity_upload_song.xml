@@ -74,56 +74,51 @@
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginTop="100dp"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
         android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
             android:id="@+id/Home"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="25dp"
+            android:layout_gravity="center"
             android:layout_weight="1"
-            android:src="@drawable/dashboard"
-            android:layout_gravity="center"/>
-
-        <Space
-            android:layout_width="8dp"
-            android:layout_height="0dp"/>
+            android:src="@drawable/dashboard" />
 
         <ImageView
             android:id="@+id/ListCloud"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="25dp"
+            android:layout_gravity="center"
             android:layout_weight="1"
-            android:src="@drawable/playlist"
-            android:layout_gravity="center"/>
-
-        <Space
-            android:layout_width="8dp"
-            android:layout_height="0dp"/>
+            android:src="@drawable/playlist" />
 
         <ImageView
-            android:id="@+id/Albums"
-            android:layout_width="0dp"
+            android:id="@+id/Playlists"
+            android:layout_width="match_parent"
             android:layout_height="25dp"
+            android:layout_gravity="center"
             android:layout_weight="1"
-            android:src="@drawable/albums"
-            android:layout_gravity="center"/>
-
-        <Space
-            android:layout_width="8dp"
-            android:layout_height="0dp"/>
+            android:src="@drawable/playlists" />
+        <ImageView
+            android:id="@+id/Albums"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/albums" />
 
         <ImageView
             android:id="@+id/CrearCanco"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="30dp"
+            android:layout_gravity="center"
             android:layout_weight="1"
-            android:src="@drawable/upload"
-            android:layout_gravity="center"/>
+            android:src="@drawable/upload" />
 
     </LinearLayout>
 
