@@ -19,7 +19,7 @@
     <Compile Update="ControllerUser\InstrumentInfo.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="ControllerUser\MenuDocker.xaml.cs">
+    <Compile Update="MenuDocker.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="ControllerUser\MusicianInfo.xaml.cs">
@@ -60,7 +60,7 @@
     <Page Update="ControllerUser\InstrumentInfo.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="ControllerUser\MenuDocker.xaml">
+    <Page Update="MenuDocker.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ControllerUser\MusicianInfo.xaml">

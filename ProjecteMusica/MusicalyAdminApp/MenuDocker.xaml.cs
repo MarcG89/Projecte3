@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MusicalyAdminApp.ControllerUser
+namespace MusicalyAdminApp
 {
     /// <summary>
     /// Lógica de interacción para MenuDocker.xaml
