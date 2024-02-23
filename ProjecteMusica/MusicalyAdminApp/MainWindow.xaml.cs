@@ -27,23 +27,20 @@ namespace MusicalyAdminApp
         {
             InitializeComponent();
 
-            if (IsLoaded)
+            string path = ConfigurationManager.AppSettings["dockerDirectory"];
+            if (!Directory.Exists(path))
             {
-                string path = @"./afasfa";
-                /*if (!Directory.Exists(path))
-                {*/
-                    ChooseDockerAndApi cda = new ChooseDockerAndApi();
-                    cda.Show();
-                    Close();
-                /*}
-                else
-                {*/
-                    apiSql = new Apisql();
-                    // Initialize and display songs and albums.
-                    ShowSongs();
-                    ShowAlbums();
-                    WindowState = WindowState.Maximized;
-                //}
+                ChooseDockerAndApi cda = new ChooseDockerAndApi();
+                cda.Show();
+                Close();
+            }
+            else
+            {
+                apiSql = new Apisql();
+                // Initialize and display songs and albums.
+                ShowSongs();
+                ShowAlbums();
+                WindowState = WindowState.Maximized;
             }
         }
 
