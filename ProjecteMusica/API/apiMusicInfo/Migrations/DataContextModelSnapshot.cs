@@ -40,24 +40,6 @@ namespace apiMusicInfo.Migrations
                     b.ToTable("AlbumSong");
                 });
 
-            modelBuilder.Entity("BandMusician", b =>
-                {
-                    b.Property<string>("MusiciansName")
-                        .HasColumnType("nvarchar(15)");
-
-                    b.Property<string>("BandsName")
-                        .HasColumnType("nvarchar(15)");
-
-                    b.Property<DateTime>("BandsFoundationDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("MusiciansName", "BandsName", "BandsFoundationDate");
-
-                    b.HasIndex("BandsName", "BandsFoundationDate");
-
-                    b.ToTable("BandMusician");
-                });
-
             modelBuilder.Entity("ExtensionSong", b =>
                 {
                     b.Property<string>("ExtensionsName")
@@ -138,6 +120,27 @@ namespace apiMusicInfo.Migrations
                     b.ToTable("Bands");
                 });
 
+            modelBuilder.Entity("apiMusicInfo.Models.BandMusician", b =>
+                {
+                    b.Property<string>("BandName")
+                        .HasColumnType("nvarchar(15)");
+
+                    b.Property<DateTime>("BandFoundationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("MusicianName")
+                        .HasColumnType("nvarchar(15)");
+
+                    b.Property<DateTime>("JoinDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("BandName", "BandFoundationDate", "MusicianName", "JoinDate");
+
+                    b.HasIndex("MusicianName");
+
+                    b.ToTable("BandMusicians");
+                });
+
             modelBuilder.Entity("apiMusicInfo.Models.Extension", b =>
                 {
                     b.Property<string>("Name")
@@ -176,7 +179,7 @@ namespace apiMusicInfo.Migrations
 
                     b.HasIndex("Name");
 
-                    b.ToTable("Musician");
+                    b.ToTable("Musicians");
                 });
 
             modelBuilder.Entity("apiMusicInfo.Models.Play", b =>
@@ -271,21 +274,6 @@ namespace apiMusicInfo.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("BandMusician", b =>
-                {
-                    b.HasOne("apiMusicInfo.Models.Musician", null)
-                        .WithMany()
-                        .HasForeignKey("MusiciansName")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("apiMusicInfo.Models.Band", null)
-                        .WithMany()
-                        .HasForeignKey("BandsName", "BandsFoundationDate")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("ExtensionSong", b =>
                 {
                     b.HasOne("apiMusicInfo.Models.Extension", null)
@@ -314,6 +302,25 @@ namespace apiMusicInfo.Migrations
                         .HasForeignKey("PlaylistsDispositiu", "PlaylistsPlaylistName")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("apiMusicInfo.Models.BandMusician", b =>
+                {
+                    b.HasOne("apiMusicInfo.Models.Musician", "Musician")
+                        .WithMany("BandMusicians")
+                        .HasForeignKey("MusicianName")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("apiMusicInfo.Models.Band", "Band")
+                        .WithMany("BandMusicians")
+                        .HasForeignKey("BandName", "BandFoundationDate")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Band");
+
+                    b.Navigation("Musician");
                 });
 
             modelBuilder.Entity("apiMusicInfo.Models.Play", b =>
@@ -362,6 +369,8 @@ namespace apiMusicInfo.Migrations
 
             modelBuilder.Entity("apiMusicInfo.Models.Band", b =>
                 {
+                    b.Navigation("BandMusicians");
+
                     b.Navigation("Plays");
                 });
 
@@ -372,6 +381,8 @@ namespace apiMusicInfo.Migrations
 
             modelBuilder.Entity("apiMusicInfo.Models.Musician", b =>
                 {
+                    b.Navigation("BandMusicians");
+
                     b.Navigation("Plays");
                 });
 

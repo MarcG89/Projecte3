@@ -26,7 +26,7 @@ namespace apiMusicInfo.Data
 
         }
 
-        public DbSet<Musician> Musician { get; set; } = null!;
+        public DbSet<Musician> Musicians { get; set; } = null!;
         public DbSet<Band> Bands { get; set; } = null!;
         public DbSet<BandMusician> BandMusicians { get; set; } = null!;
         public DbSet<Song> Songs { get; set; }
