@@ -1,5 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Threading.Tasks;
 using ApiMusica.Classes.Model;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDB.Driver.GridFS;
 
@@ -7,29 +11,38 @@ namespace ApiMusica.Controllers.v1.Services
 {
     public class AlbumService
     {
-        private readonly IMongoCollection<Album> _albums;
+        private readonly IMongoCollection<Album> _albumCollection;
+        private readonly GridFSBucket _gridFSBucket;
 
         public AlbumService(IMongoDatabase database)
         {
-            _albums = database.GetCollection<Album>("albums");
+            _albumCollection = database.GetCollection<Album>("Album");
+
+            // Configurar GridFSBucket
+            _gridFSBucket = new GridFSBucket(database);
         }
 
-        public List<Album> Get() =>
-            _albums.Find(album => true).ToList();
-
-        public Album Get(string id) =>
-            _albums.Find<Album>(album => album.Titol == id).FirstOrDefault();
-
-        public Album Create(Album album)
+        // Método para crear un nuevo álbum
+        public async Task CreateAlbum(Album album)
         {
-            _albums.InsertOne(album);
-            return album;
+            await _albumCollection.InsertOneAsync(album);
         }
-        public void Update(string id, Album albumIn) =>
-            _albums.ReplaceOne(album => album.Titol == id, albumIn);
-        public void Remove(Album albumIn) =>
-            _albums.DeleteOne(album => album.Titol == albumIn.Titol);
-        public void Remove(string id) =>
-            _albums.DeleteOne(album => album.Titol == id);
+        // Método para subir imágenes a GridFS
+        public async Task<ObjectId> SubirImagenAsync(IFormFile imagen, string nombreArchivo)
+        {
+            using (var stream = new MemoryStream())
+            {
+                await imagen.CopyToAsync(stream);
+                stream.Seek(0, SeekOrigin.Begin); // Reiniciar la posición del flujo
+
+                // Opciones para la carga de GridFS
+                var options = new GridFSUploadOptions
+                {
+                    Metadata = new BsonDocument("contentType", imagen.ContentType) // Opcional: Puedes agregar metadatos adicionales
+                };
+
+                return await _gridFSBucket.UploadFromStreamAsync(nombreArchivo, stream, options);
+            }
+        }
     }
 }

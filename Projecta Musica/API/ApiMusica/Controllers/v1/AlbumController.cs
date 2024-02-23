@@ -1,8 +1,11 @@
 ﻿using ApiMusica.Classes.Model;
 using ApiMusica.Controllers.v1.Services;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ApiMusica.Controllers.v1
 {
@@ -15,63 +18,38 @@ namespace ApiMusica.Controllers.v1
 
         public AlbumController(AlbumService albumService, ILogger<AlbumController> logger)
         {
-            _albumService = albumService;
-            _logger = logger;
-        }
-
-        [HttpGet]
-        public ActionResult<List<Album>> Get() =>
-            _albumService.Get();
-
-        [HttpGet("{id:length(24)}", Name = "GetAlbum")]
-        public ActionResult<Album> Get(string id)
-        {
-            var album = _albumService.Get(id);
-
-            if (album == null)
-            {
-                return NotFound();
-            }
-
-            return album;
+            _albumService = albumService ?? throw new ArgumentNullException(nameof(albumService));
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
         [HttpPost]
-        public ActionResult<Album> Create(Album album)
+        public async Task<ActionResult<Album>> CreateAlbum([FromForm] Album albumModel)
         {
-            _albumService.Create(album);
-
-            return CreatedAtRoute("GetAlbum", new { id = album.Titol.ToString() }, album);
-        }
-
-        [HttpPut("{id:length(24)}")]
-        public IActionResult Update(string id, Album albumIn)
-        {
-            var album = _albumService.Get(id);
-
-            if (album == null)
+            try
             {
-                return NotFound();
+                // Subir las imágenes a GridFS y obtener los ObjectIds
+               await _albumService.SubirImagenAsync(albumModel.FrontCover, $"{albumModel.Titol}_FrontCover.jpg");
+               await _albumService.SubirImagenAsync(albumModel.BackCover, $"{albumModel.Titol}_BackCover.jpg");
+
+                // Crear el objeto Album con los datos del álbum y los ObjectIds de las imágenes
+                var album = new Album
+                {
+                    Titol = albumModel.Titol,
+                    Year = albumModel.Year,
+                    Gender = albumModel.Gender,
+                };
+                   
+                // Crear el álbum en la base de datos
+                await _albumService.CreateAlbum(album);
+
+                return StatusCode(200, "Creat");
             }
-
-            _albumService.Update(id, albumIn);
-
-            return NoContent();
-        }
-
-        [HttpDelete("{id:length(24)}")]
-        public IActionResult Delete(string id)
-        {
-            var album = _albumService.Get(id);
-
-            if (album == null)
+            catch (Exception ex)
             {
-                return NotFound();
+                _logger.LogError(ex, "Error al crear el álbum.");
+                return StatusCode(500, "Error interno del servidor.");
             }
-
-            _albumService.Remove(album.Titol);
-
-            return NoContent();
         }
+
     }
 }

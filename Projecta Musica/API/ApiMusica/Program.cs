@@ -1,3 +1,4 @@
+using ApiMusica.Controllers.v1.Services;
 using Microsoft.Extensions.Options;
 using mla.ApiMusica.Classes;
 using MongoDB.Driver;
@@ -23,6 +24,7 @@ builder.Services.AddSingleton<IMongoDatabase>(provider =>
 builder.Services.AddSingleton<mla.ApiMusica.Services.AudioService>();
 
 builder.Services.AddControllers();
+builder.Services.AddSingleton<AlbumService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
