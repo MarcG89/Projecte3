@@ -4,8 +4,10 @@
     "\\ProjecteMusica",
     "\\ProjecteMusica\\API",
     "\\ProjecteMusica\\API\\apiMusicInfo",
-    "\\ProjecteMusica\\API\\apiMusicInfo\\Model"
+    "\\ProjecteMusica\\API\\apiMusicInfo\\Controllers",
+    "\\ProjecteMusica\\API\\apiMusicInfo\\Controllers\\Services",
+    "\\ProjecteMusica\\API\\vells"
   ],
-  "SelectedNode": "\\ProjecteMusica\\API\\apiMusicInfo\\Model\\Album.cs",
+  "SelectedNode": "\\ProjecteMusica\\API\\apiMusicInfo\\apiMusicInfo.sln",
   "PreviewInSolutionExplorer": false
 }
