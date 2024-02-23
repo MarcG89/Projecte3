@@ -7,6 +7,19 @@
         mc:Ignorable="d"
         Title="ChooseDockerAndApi" Height="450" Width="800">
     <Grid>
-        
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="0" Orientation="Horizontal">
+            <Button x:Name="btAccept" Content="Acceptar" Height="30" />
+        </StackPanel>
     </Grid>
 </Window>

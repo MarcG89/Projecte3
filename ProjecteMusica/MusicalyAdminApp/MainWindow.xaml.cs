@@ -23,6 +23,11 @@ namespace MusicalyAdminApp
         public MainWindow()
         {
             InitializeComponent();
+
+            if (IsLoaded)
+            {
+
+            }
             apiSql = new Apisql();
             // Initialize and display songs and albums.
             ShowSongs();

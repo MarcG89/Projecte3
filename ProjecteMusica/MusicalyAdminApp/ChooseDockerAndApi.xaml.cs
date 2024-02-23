@@ -21,7 +21,7 @@ namespace MusicalyAdminApp
     {
         public ChooseDockerAndApi()
         {
-            InitializeComponent();
+            InitializeComponent(); 
         }
     }
 }

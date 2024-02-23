@@ -4,9 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MusicalyAdminApp.ControllerUser"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             mc:Ignorable="d" Height="80" Width="207">
     <Grid>
-            
+        <Label Content="Escull la versió de Docker a instalar:"  />
+        <ComboBox x:Name="opcionsDocker" Height="30" Width="100" Margin="51,36,56,14"/>
     </Grid>
 </UserControl>
