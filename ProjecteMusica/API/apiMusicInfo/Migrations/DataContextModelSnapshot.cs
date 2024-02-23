@@ -135,7 +135,7 @@ namespace apiMusicInfo.Migrations
 
                     b.HasKey("Name", "FoundationDate");
 
-                    b.ToTable("Band");
+                    b.ToTable("Bands");
                 });
 
             modelBuilder.Entity("apiMusicInfo.Models.Extension", b =>
@@ -190,16 +190,19 @@ namespace apiMusicInfo.Migrations
                     b.Property<string>("InstrumentName")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("Bandname")
+                    b.Property<string>("BandName")
                         .HasColumnType("nvarchar(15)");
 
-                    b.HasKey("SongUID", "MusicianName", "InstrumentName", "Bandname");
+                    b.Property<DateTime>("BandDateFoundation")
+                        .HasColumnType("datetime2");
 
-                    b.HasIndex("Bandname");
+                    b.HasKey("SongUID", "MusicianName", "InstrumentName", "BandName", "BandDateFoundation");
 
                     b.HasIndex("InstrumentName");
 
                     b.HasIndex("MusicianName");
+
+                    b.HasIndex("BandName", "BandDateFoundation");
 
                     b.ToTable("Plays");
                 });
@@ -315,13 +318,6 @@ namespace apiMusicInfo.Migrations
 
             modelBuilder.Entity("apiMusicInfo.Models.Play", b =>
                 {
-                    b.HasOne("apiMusicInfo.Models.Band", "Band")
-                        .WithMany("Plays")
-                        .HasForeignKey("Bandname")
-                        .HasPrincipalKey("Name")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("apiMusicInfo.Models.Instrument", "Instrument")
                         .WithMany("Plays")
                         .HasForeignKey("InstrumentName")
@@ -337,6 +333,12 @@ namespace apiMusicInfo.Migrations
                     b.HasOne("apiMusicInfo.Models.Song", "Song")
                         .WithMany("Plays")
                         .HasForeignKey("SongUID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("apiMusicInfo.Models.Band", "Band")
+                        .WithMany("Plays")
+                        .HasForeignKey("BandName", "BandDateFoundation")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

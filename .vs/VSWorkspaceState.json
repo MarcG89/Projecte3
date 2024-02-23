@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\ProjecteMusica",
+    "\\ProjecteMusica\\API",
+    "\\ProjecteMusica\\API\\apiMusicInfo",
+    "\\ProjecteMusica\\API\\apiMusicInfo\\Model"
+  ],
+  "SelectedNode": "\\ProjecteMusica\\API\\apiMusicInfo\\Model\\Album.cs",
+  "PreviewInSolutionExplorer": false
+}

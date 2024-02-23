@@ -12,7 +12,7 @@ namespace apiMusicInfo.Models
         public string? Origin { get; set; }
         [MaxLength(15)]
         public string? Genre { get; set; }
-        public ICollection<Musician> Musicians { get; set; } = null!;
+        public ICollection<Musician>? Musicians { get; set; } = null!;
         public ICollection<Play> Plays { get; set; } = new List<Play>();
     }
 }

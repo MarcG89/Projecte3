@@ -1,5 +1,3 @@
-using System.ComponentModel.DataAnnotations;
-using System.Runtime.CompilerServices;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -9,9 +7,8 @@ namespace apiMusicInfo.Models.Configurations
     {
         public void Configure(EntityTypeBuilder<Play> builder)
         {
-             builder.HasKey(p => new { p.SongUID, p.MusicianName, p.InstrumentName, p.Bandname});
+            builder.HasKey(p => new { p.SongUID, p.MusicianName, p.InstrumentName, p.BandName, p.BandDateFoundation});
 
-            
             builder.HasOne(p => p.Song)
                 .WithMany(s => s.Plays)
                 .HasForeignKey(p => p.SongUID)
@@ -24,8 +21,7 @@ namespace apiMusicInfo.Models.Configurations
 
             builder.HasOne(p => p.Band)
                 .WithMany(b => b.Plays)
-                .HasForeignKey(p => new { p.BandName, p.BandDateFoundation })
-                .HasPrincipalKey(b => new { b.Name, b.FoundationDate });
+                .HasForeignKey(p => new { p.BandName, p.BandDateFoundation});
         }
     }
 }

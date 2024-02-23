@@ -88,7 +88,7 @@ namespace apiMusicInfo.Controllers.Services
                 return ServiceResult.Failure($"Musician with name '{nameMusician}' not found.");
             }
 
-            var band = await _context.Band.FirstOrDefaultAsync(b => b.Name == nameBand);
+            var band = await _context.Bands.FirstOrDefaultAsync(b => b.Name == nameBand);
 
             if (musician.Bands != null && musician.Bands.Any(b => b.Name == nameBand))
             {
