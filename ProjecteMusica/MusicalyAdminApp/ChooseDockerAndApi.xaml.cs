@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using MusicalyAdminApp.API.APISQL.Taules;
+using MusicalyAdminApp.API.APISQL;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -15,6 +17,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Net;
 
 namespace MusicalyAdminApp
 {
@@ -28,9 +31,9 @@ namespace MusicalyAdminApp
         private string apiHistorial;
         private String jsonRuta = "Config\\config_doc.json";
 
-        private Regex regexIP = new Regex(@"/^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])$/");
-        //private Regex regexIP = new Regex(@"/^((?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])[.]){3}(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$/");
-        
+        private IPAddress ipSql;
+        private IPAddress ipMongoDB;
+        private IPAddress ipHistorial;
         public ChooseDockerAndApi()
         {
             InitializeComponent(); 
@@ -50,34 +53,19 @@ namespace MusicalyAdminApp
             if (this.apiSql != "" && this.apiMongoDB != ""
             && this.apiHistorial != "")
             {
-                if (this.apiSql != "0.0.0.0" && this.apiMongoDB != "0.0.0.0"
-                && this.apiHistorial != "0.0.0.0" && !this.apiSql.Contains("255")
-                && !this.apiMongoDB.Contains("255") && !this.apiHistorial.Contains("255")
-                && !this.apiSql.EndsWith(".0") && !this.apiMongoDB.EndsWith(".0")
-                && !this.apiHistorial.EndsWith(".0") && !this.regexIP.IsMatch(this.apiSql)
-                && !this.regexIP.IsMatch(this.apiMongoDB) && !this.regexIP.IsMatch(this.apiHistorial))
+                if (IPAddress.TryParse(this.apiSql, out ipSql) &&
+                     IPAddress.TryParse(this.apiMongoDB, out ipMongoDB) &&
+                     IPAddress.TryParse(this.apiHistorial, out ipHistorial))
                 {
                     // Read configuration data from JSON file
                     string jsonContent = File.ReadAllText(jsonRuta);
-                    /*MessageBox.Show(jsonContent);
-                    dynamic configData = JObject.Parse(jsonContent);
-                    configData.IPSQL = apiSql;
-                    configData.IPHistorial = apiHistorial;
-                    configData.IPAudio = apiMongoDB;
-
-                    string nouContingutJson = configData.ToString();
-                    File.WriteAllText(jsonRuta, nouContingutJson);*/
-
-
-
                     dynamic jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(jsonContent);
-                    jsonObj["IPSQL"] = apiSql;
-                    jsonObj["IPAudio"] = apiMongoDB;
-                    jsonObj["IPHistorial"] = apiHistorial;
+                    jsonObj["IPSQL"] = ipSql;
+                    jsonObj["IPAudio"] = ipMongoDB;
+                    jsonObj["IPHistorial"] = ipHistorial;
                     string output = Newtonsoft.Json.JsonConvert.SerializeObject(jsonObj, Newtonsoft.Json.Formatting.Indented);
                     MessageBox.Show("Valor nou JSON: " + output);
                     File.WriteAllText(jsonRuta, output);
-
 
                     MessageBox.Show("IPs correctes");
                 }
