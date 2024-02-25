@@ -71,8 +71,9 @@ namespace MusicalyAdminApp
                     dynamic newjsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(jsonContent);
                     MessageBox.Show("Valor nou JSON: " + newjsonObj);
 
-                    MessageBox.Show("IPs correctes");
-
+                    MainWindow mw = new MainWindow();
+                    mw.Show();
+                    this.Close();
                 }
                 else
                 {
