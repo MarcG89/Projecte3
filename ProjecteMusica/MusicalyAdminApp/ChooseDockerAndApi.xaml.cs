@@ -30,6 +30,7 @@ namespace MusicalyAdminApp
         private string apiMongoDB;
         private string apiHistorial;
         private String jsonRuta = "Config\\config_doc.json";
+        private MainWindow mw;
 
         private IPAddress ipSql;
         private IPAddress ipMongoDB;
@@ -60,14 +61,18 @@ namespace MusicalyAdminApp
                     // Read configuration data from JSON file
                     string jsonContent = File.ReadAllText(jsonRuta);
                     dynamic jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(jsonContent);
-                    jsonObj["IPSQL"] = ipSql;
-                    jsonObj["IPAudio"] = ipMongoDB;
-                    jsonObj["IPHistorial"] = ipHistorial;
+                    jsonObj["IPSQL"] = ipSql.ToString();
+                    jsonObj["IPAudio"] = ipMongoDB.ToString();
+                    jsonObj["IPHistorial"] = ipHistorial.ToString();
                     string output = Newtonsoft.Json.JsonConvert.SerializeObject(jsonObj, Newtonsoft.Json.Formatting.Indented);
-                    MessageBox.Show("Valor nou JSON: " + output);
                     File.WriteAllText(jsonRuta, output);
 
+                    jsonContent = File.ReadAllText(jsonRuta);
+                    dynamic newjsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(jsonContent);
+                    MessageBox.Show("Valor nou JSON: " + newjsonObj);
+
                     MessageBox.Show("IPs correctes");
+
                 }
                 else
                 {
