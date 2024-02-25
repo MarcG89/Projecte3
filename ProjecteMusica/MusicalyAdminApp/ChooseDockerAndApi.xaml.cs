@@ -40,10 +40,13 @@ namespace MusicalyAdminApp
             InitializeComponent(); 
         }
 
+        /// <summary>
+        /// Mètode per obrir la finestra principal o MainWindow
+        /// </summary>
         private void openMainWindow()
         {
-            MainWindow mw = new MainWindow();
-            mw.Show();
+            this.mw = new MainWindow();
+            this.mw.Show();
         }
 
         /// <summary>
@@ -77,10 +80,29 @@ namespace MusicalyAdminApp
                     dynamic newjsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(jsonContent);
                     MessageBox.Show("Valor nou JSON: " + newjsonObj);
 
-                    Thread th = new Thread(openMainWindow);
+                    /*
+                     * Obrim la MainWindow utilitzant un Thread per assegurar-
+                     * nos de que aquesta s'obri abans de tancar la actual 
+                     * (ChooseDockerAndApi)
+                     */
+                    Application.Current.Dispatcher.Invoke(openMainWindow);
+                    Application.Current.Dispatcher.Invoke(() =>
+                    {
+                        if (this.mw.IsVisible)
+                        {
+                            Close();
+                        }
+                    });
+
+                    /*Thread th = new Thread(openMainWindow);
+                    th.SetApartmentState(ApartmentState.STA);
                     th.Start();
                     th.Join();
-                    this.Close();
+
+                    if (this.mw.IsVisible)
+                    {
+                        Close();
+                    }*/
                 }
                 else
                 {
