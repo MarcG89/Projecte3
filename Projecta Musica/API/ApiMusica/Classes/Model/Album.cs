@@ -13,8 +13,8 @@ namespace ApiMusica.Classes.Model
         public int Year { get; set; }
         public string Gender { get; set; }
      
-        public ObjectId FrontCover { get; set; }
-        public ObjectId BackCover { get; set; }
+        public string FrontCover { get; set; }
+        public string BackCover { get; set; }
 
     }
 }

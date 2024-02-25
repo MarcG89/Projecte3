@@ -49,5 +49,10 @@ namespace ApiMusica.Controllers.v1.Services
         {
             return await _albumCollection.Find(_ => true).ToListAsync();
         }
+        public async Task<Stream> GetFrontCoverAsync(ObjectId frontCoverId)
+        {
+            return await _gridFSBucket.OpenDownloadStreamAsync(frontCoverId);
+        }
+
     }
 }

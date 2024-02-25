@@ -3,6 +3,7 @@ using ApiMusica.Controllers.v1.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using mla.ApiMusica.Services;
+using MongoDB.Bson;
 using System;
 using System.Threading.Tasks;
 
@@ -35,8 +36,8 @@ namespace ApiMusica.Controllers.v1
                     Titol = albumModel.Titol,
                     Year = albumModel.Year,
                     Gender = albumModel.Gender,
-                    FrontCover = frontCoverId,
-                    BackCover = backCoverId
+                    FrontCover = frontCoverId.ToString(),
+                    BackCover = backCoverId.ToString()
                 };
 
                 // Crear el álbum en la base de datos
@@ -84,5 +85,31 @@ namespace ApiMusica.Controllers.v1
                 return StatusCode(500, "Error interno del servidor.");
             }
         }
+
+        [HttpGet("getFrontCover/{frontCoverId}")]
+        public async Task<IActionResult> GetFrontCoverAsync(string frontCoverId)
+        {
+            if (!ObjectId.TryParse(frontCoverId, out ObjectId objectId))
+            {
+                return BadRequest("Invalid ObjectId format.");
+            }
+
+            try
+            {
+                // Get front cover stream
+                Stream frontCoverStream = await _albumService.GetFrontCoverAsync(objectId);
+
+                // Set content type
+                HttpContext.Response.ContentType = "image/jpeg"; // Change the content type if necessary
+
+                // Return the front cover stream as a file result
+                return File(frontCoverStream, "image/jpeg"); // Change the file format if necessary
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Failed to get front cover: {ex.Message}");
+            }
+        }
+
     }
 }
