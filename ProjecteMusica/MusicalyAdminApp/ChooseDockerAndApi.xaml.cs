@@ -29,7 +29,7 @@ namespace MusicalyAdminApp
         private string apiSql;
         private string apiMongoDB;
         private string apiHistorial;
-        private String jsonRuta = "Config\\config_doc.json";
+        private string jsonRuta = "Config\\config_doc.json";
         private MainWindow mw;
 
         private IPAddress ipSql;
@@ -38,6 +38,12 @@ namespace MusicalyAdminApp
         public ChooseDockerAndApi()
         {
             InitializeComponent(); 
+        }
+
+        private void openMainWindow()
+        {
+            MainWindow mw = new MainWindow();
+            mw.Show();
         }
 
         /// <summary>
@@ -71,8 +77,9 @@ namespace MusicalyAdminApp
                     dynamic newjsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(jsonContent);
                     MessageBox.Show("Valor nou JSON: " + newjsonObj);
 
-                    MainWindow mw = new MainWindow();
-                    mw.Show();
+                    Thread th = new Thread(openMainWindow);
+                    th.Start();
+                    th.Join();
                     this.Close();
                 }
                 else

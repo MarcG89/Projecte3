@@ -19,7 +19,10 @@ namespace MusicalyAdminApp
     {
         // API instance for SQL operations.
         private readonly Apisql apiSql;
-
+        private string jsonRuta;
+        private string jsonContent;
+        private dynamic jsonObj;
+        private string path;
         /// <summary>
         /// Constructor for MainWindow class.
         /// </summary>
@@ -27,7 +30,11 @@ namespace MusicalyAdminApp
         {
             InitializeComponent();
 
-            string path = ConfigurationManager.AppSettings["dockerDirectory"];
+            this.jsonRuta = "Config\\config_doc.json";
+            this.jsonContent = File.ReadAllText(this.jsonRuta);
+            this.jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(this.jsonContent);
+            this.path = jsonObj["dockerDirectory"];
+
             if (!Directory.Exists(path))
             {
                 ChooseDockerAndApi cda = new ChooseDockerAndApi();
