@@ -23,5 +23,10 @@ namespace MusicalyAdminApp
         {
             InitializeComponent(); 
         }
+
+        private async void setApi(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -29,21 +29,32 @@
             </TabItem>
             <TabItem Header="Page API" IsEnabled="False">
                 <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="60" />
+                    </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock Text="API SQL" FontSize="20" HorizontalAlignment="Center" FontWeight="Bold" />
                         <local:MenuAPI x:Name="menuApiSQL" />
                     </StackPanel>
 
-                    <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                        <local:MenuAPI x:Name="menuApiAudio" />
+                    <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock Text="API MongoDB" FontSize="20" HorizontalAlignment="Center" FontWeight="Bold" />
+                        <local:MenuAPI x:Name="menuApiMongoDB" />
                     </StackPanel>
 
-                    <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock Text="API Historial" FontSize="20" HorizontalAlignment="Center" FontWeight="Bold" />
                         <local:MenuAPI x:Name="menuApiHistorial" />
+                    </StackPanel>
+                    
+                    <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Button Content="Acceptar" Click="setApi" />
                     </StackPanel>
                 </Grid>
             </TabItem>
