@@ -45,7 +45,8 @@ namespace MusicalyAdminApp
                 ShowSongs();
                 ShowAlbums();
                 WindowState = WindowState.Maximized;
-            } else
+            } 
+            else
             {
                 ChooseDockerAndApi cda = new ChooseDockerAndApi();
                 cda.Show();
