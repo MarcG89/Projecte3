@@ -10,7 +10,7 @@
 
 <h2>Procés</h2>
 
-![Afegir projecte Storage](/Captures/afegirStorageSetup.png)
+![Afegir projecte Storage](Captures/afegirStorageSetup.png)
 <p>Quan ja tinguis instal·lada l’extensió, crea un segon projecte dins la mateixa solució que més endavant ens servirà per fer el Setup.</p>
 
 <p>Un cop hagis creat el projecte Setup, podràs veure aquestes tres carpetes:</p>
