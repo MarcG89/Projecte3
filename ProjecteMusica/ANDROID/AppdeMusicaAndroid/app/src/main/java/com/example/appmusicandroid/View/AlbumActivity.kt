@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.appmusicandroid.Adaper.AlbumAdapter
 import com.example.appmusicandroid.Api.MongoService
 import com.example.appmusicandroid.Model.Album
-import com.example.appmusicandroid.databinding.AlbumActivityBinding
+import com.example.appmusicandroid.databinding.AlbumListActivityBinding
 import kotlinx.coroutines.launch
 import okhttp3.ResponseBody
 import retrofit2.Call
@@ -28,7 +28,7 @@ import java.io.InputStreamReader
 
 class AlbumActivity : AppCompatActivity(){
     private var AlbumList: MutableList<Album> = mutableListOf()
-    private lateinit var binding: AlbumActivityBinding
+    private lateinit var binding: AlbumListActivityBinding
     private lateinit var adapter: AlbumAdapter
     private lateinit var recyclerView: RecyclerView
     // API URL
@@ -41,7 +41,7 @@ class AlbumActivity : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = AlbumActivityBinding.inflate(layoutInflater)
+        binding = AlbumListActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
         recyclerView = binding.recyclerViewAlbums
         NavegationFunctions()
