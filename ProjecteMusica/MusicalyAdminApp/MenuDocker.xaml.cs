@@ -25,7 +25,7 @@ namespace MusicalyAdminApp
             InitializeComponent();
             List<string> options = new List<string>();
             options.Add("MSSQL");
-            options.Add("MySQL");
+            options.Add("MYSQL");
             options.Add("PostgreSQL");
             this.opcionsDocker.ItemsSource = options;
         }

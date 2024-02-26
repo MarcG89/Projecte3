@@ -6,16 +6,17 @@
         xmlns:local="clr-namespace:MusicalyAdminApp"
         mc:Ignorable="d"
           Title="MainWindow" Height="580" Width="750">
-        <Window.Background>
-            <ImageBrush ImageSource="https://i.pinimg.com/736x/39/c7/1e/39c71e43cd06601a698edc75859dd674.jpg"/>
-        </Window.Background>
+    <Window.Background>
+        <ImageBrush ImageSource="https://i.pinimg.com/736x/39/c7/1e/39c71e43cd06601a698edc75859dd674.jpg"/>
+    </Window.Background>
     <Viewbox Loaded="Viewbox_Loaded">
         <Grid>
             <Grid.ColumnDefinitions>
                 <!-- Nueva columna para el menú lateral -->
                 <ColumnDefinition Width="170" />
                 <!-- Columna principal -->
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="31*" />
+                <ColumnDefinition Width="329*"/>
             </Grid.ColumnDefinitions>
 
             <!-- Menú lateral -->
@@ -39,7 +40,7 @@
             </Border>
 
             <!-- Contenido principal -->
-            <Grid Grid.Column="1">
+            <Grid Grid.Column="1" Grid.ColumnSpan="2">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50" />
                     <RowDefinition Height="*" />

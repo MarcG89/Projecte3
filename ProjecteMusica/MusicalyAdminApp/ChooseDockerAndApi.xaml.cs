@@ -92,16 +92,6 @@ namespace MusicalyAdminApp
                      */
                     Application.Current.Dispatcher.Invoke(openMainWindow);
                     Application.Current.Dispatcher.Invoke(() => { Close(); });
-
-                    /*Thread th = new Thread(openMainWindow);
-                    th.SetApartmentState(ApartmentState.STA);
-                    th.Start();
-                    th.Join();
-
-                    if (this.mw.IsVisible)
-                    {
-                        Close();
-                    }*/
                 }
                 else
                 {

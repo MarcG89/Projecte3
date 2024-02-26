@@ -33,25 +33,7 @@ namespace MusicalyAdminApp
         {
             InitializeComponent();
 
-            this.jsonRuta = "Config\\config_doc.json";
-            this.jsonContent = File.ReadAllText(this.jsonRuta);
-            this.jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(this.jsonContent);
-            this.path = jsonObj["dockerDirectory"];
-
-            if (this.CheckDocker().StartsWith("Client:"))
-            {
-                apiSql = new Apisql();
-                // Initialize and display songs and albums.
-                ShowSongs();
-                ShowAlbums();
-                WindowState = WindowState.Maximized;
-            } 
-            else
-            {
-                ChooseDockerAndApi cda = new ChooseDockerAndApi();
-                cda.Show();
-                Close();
-            }
+            
         }
 
         private string CheckDocker()
@@ -295,7 +277,25 @@ namespace MusicalyAdminApp
 
         private void Viewbox_Loaded(object sender, RoutedEventArgs e)
         {
-            // TODO: crida de les finestres
+            this.jsonRuta = "Config\\config_doc.json";
+            this.jsonContent = File.ReadAllText(this.jsonRuta);
+            this.jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(this.jsonContent);
+            this.path = jsonObj["dockerDirectory"];
+
+            if (this.CheckDocker().StartsWith("Client:"))
+            {
+                apiSql = new Apisql();
+                // Initialize and display songs and albums.
+                ShowSongs();
+                ShowAlbums();
+                WindowState = WindowState.Maximized;
+            }
+            else
+            {
+                ChooseDockerAndApi cda = new ChooseDockerAndApi();
+                cda.Show();
+                Close();
+            }
         }
     }
 }
