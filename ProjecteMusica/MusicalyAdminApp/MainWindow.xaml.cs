@@ -20,7 +20,7 @@ namespace MusicalyAdminApp
     public partial class MainWindow : Window
     {
         // API instance for SQL operations.
-        private readonly Apisql apiSql;
+        private Apisql apiSql;
         private string jsonRuta;
         private string jsonContent;
         private dynamic jsonObj;
@@ -32,8 +32,6 @@ namespace MusicalyAdminApp
         public MainWindow()
         {
             InitializeComponent();
-
-            
         }
 
         private string CheckDocker()
@@ -42,7 +40,7 @@ namespace MusicalyAdminApp
             {
                 Process process = new Process();
                 process.StartInfo.FileName = "docker";
-                process.StartInfo.Arguments = "versiofn";
+                process.StartInfo.Arguments = "version";
                 process.StartInfo.RedirectStandardOutput = true;
                 process.StartInfo.RedirectStandardError = true;
                 process.StartInfo.UseShellExecute = false;

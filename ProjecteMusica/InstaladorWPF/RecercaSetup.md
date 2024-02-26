@@ -65,3 +65,12 @@
 
 ![Fitxer .exe creat](Captures/fitxerExeCreat.png)
 <p>Finalment, només et quedarà compilar el projecte perquè se't generi el fitxer .exe i a punt per executar-lo.</p>
+
+<h2>Procés instal·lació</h2>
+
+![Escollir directori fitxers aplicació](Captures/seleccionarCarpetaInstalador.png)
+![Instal·lació completa](Captures/instalacioCompleta.png)
+<p>El procés d'instal·lació serà simple i bàsic, només et farà falta indicar a quin directori voldràs que es guardin tots els fitxers necessaris perquè funcioni el projecte i esperar a que tot s'instal·li correctament.</p>
+
+![Aplicació afegida a l'Escriptori](Captures/appDesktop.png)
+<p>Quan hagis acabat tot el procés d'instal·lació, ja se t'haurà generat l'aplicació a l'escriptori i podràs provar-la.</p>

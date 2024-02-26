@@ -15,13 +15,13 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_1F6D22A9A0FD4649BA389D4A2563BC2A"
+        "MsmKey" = "8:_2EB0803CF8F64ADFA6A3510E83B2B128"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_2EB0803CF8F64ADFA6A3510E83B2B128"
+        "MsmKey" = "8:_5793BD2E01C542298ACC93E0E1F6B04D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -132,7 +132,7 @@
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
             "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
+            "Hidden" = "11:TRUE"
             "System" = "11:FALSE"
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
@@ -330,7 +330,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_95C28A7DADA14BBF8B263A5511E5916F"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_41668D054D7D411595D5C442F35F9E56"
             {
             "Name" = "8:ReproductorInstaller"
             "Arguments" = "8:"
@@ -338,13 +338,13 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_1F6D22A9A0FD4649BA389D4A2563BC2A"
-            "Folder" = "8:_2C7247ECBC904B14BE0BD31BF68F2DEB"
+            "Target" = "8:_5793BD2E01C542298ACC93E0E1F6B04D"
+            "Folder" = "8:_78F197AAF8F84C9D83B840BD788DFD00"
             "WorkingFolder" = "8:_1854FD643FE1434C98957B824D584E5C"
             "Icon" = "8:_2EB0803CF8F64ADFA6A3510E83B2B128"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_D915071E5B7A4F68B6D343E2323983E8"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_72511F9BF4F74AD0BCE60083BB240D26"
             {
             "Name" = "8:ReproductorInstaller"
             "Arguments" = "8:"
@@ -352,8 +352,8 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_1F6D22A9A0FD4649BA389D4A2563BC2A"
-            "Folder" = "8:_78F197AAF8F84C9D83B840BD788DFD00"
+            "Target" = "8:_5793BD2E01C542298ACC93E0E1F6B04D"
+            "Folder" = "8:_2C7247ECBC904B14BE0BD31BF68F2DEB"
             "WorkingFolder" = "8:_1854FD643FE1434C98957B824D584E5C"
             "Icon" = "8:_2EB0803CF8F64ADFA6A3510E83B2B128"
             "Feature" = "8:"
@@ -757,7 +757,7 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_1F6D22A9A0FD4649BA389D4A2563BC2A"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_5793BD2E01C542298ACC93E0E1F6B04D"
             {
             "SourcePath" = "8:..\\MusicalyAdminApp\\obj\\Release\\net8.0-windows\\apphost.exe"
             "TargetName" = "8:"
