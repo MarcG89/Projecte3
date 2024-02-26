@@ -34,6 +34,11 @@ namespace MusicalyAdminApp
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Funció per comprovar si tens el docker instal·lat executant la comanda
+        /// "docker version" mitjançant un objecte de la classe Process.
+        /// </summary>
+        /// <returns>El valor retornat de la comanda executada</returns>
         private string CheckDocker()
         {
             try

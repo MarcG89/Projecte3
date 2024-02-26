@@ -85,11 +85,6 @@ namespace MusicalyAdminApp
                     dynamic newjsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(jsonContent);
                     MessageBox.Show("Valor nou JSON: " + newjsonObj);
 
-                    /*
-                     * Obrim la MainWindow utilitzant un Thread per assegurar-
-                     * nos de que aquesta s'obri abans de tancar la actual 
-                     * (ChooseDockerAndApi)
-                     */
                     Application.Current.Dispatcher.Invoke(openMainWindow);
                     Application.Current.Dispatcher.Invoke(() => { Close(); });
                 }
