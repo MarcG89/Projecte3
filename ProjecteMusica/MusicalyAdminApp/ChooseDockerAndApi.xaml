@@ -11,7 +11,7 @@
     </Window.Background>
     <Grid>
         <TabControl>
-            <TabItem Header="Page Docker">
+            <TabItem x:Name="tabItemDocker" Header="Page Docker">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
@@ -19,7 +19,7 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Button x:Name="btAccept" Content="Acceptar" Height="30" />
+                        <Button Content="Acceptar" Height="30" Click="setDocker" />
                     </StackPanel>
 
                     <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
@@ -27,7 +27,7 @@
                     </StackPanel>
                 </Grid>
             </TabItem>
-            <TabItem Header="Page API" IsEnabled="False">
+            <TabItem x:Name="tabItemApi" Header="Page API" IsEnabled="False">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />

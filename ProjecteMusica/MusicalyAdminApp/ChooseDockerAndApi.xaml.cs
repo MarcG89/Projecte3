@@ -30,7 +30,6 @@ namespace MusicalyAdminApp
         private string apiMongoDB;
         private string apiHistorial;
         private string jsonRuta = "Config\\config_doc.json";
-        private MainWindow mw;
 
         private IPAddress ipSql;
         private IPAddress ipMongoDB;
@@ -43,10 +42,16 @@ namespace MusicalyAdminApp
         /// <summary>
         /// Mètode per obrir la finestra principal o MainWindow
         /// </summary>
-        private void openMainWindow()
+        private async void openMainWindow()
         {
-            this.mw = new MainWindow();
-            this.mw.Show();
+            MainWindow mw = new MainWindow();
+            mw.Show();
+        }
+
+
+        private async void setDocker(object sender, RoutedEventArgs e)
+        {
+            this.tabItemApi.IsEnabled = true;
         }
 
         /// <summary>
@@ -54,7 +59,7 @@ namespace MusicalyAdminApp
         /// guardarles en el fitxer Config\\config_doc.json i cridar-les en el moment
         /// de fer les peticions
         /// </summary>
-        private async void setApi(object sender, RoutedEventArgs e)
+            private async void setApi(object sender, RoutedEventArgs e)
         {
             this.apiSql = this.menuApiSQL.txtIP.Text;
             this.apiMongoDB = this.menuApiMongoDB.txtIP.Text;
@@ -86,13 +91,7 @@ namespace MusicalyAdminApp
                      * (ChooseDockerAndApi)
                      */
                     Application.Current.Dispatcher.Invoke(openMainWindow);
-                    Application.Current.Dispatcher.Invoke(() =>
-                    {
-                        if (this.mw.IsVisible)
-                        {
-                            Close();
-                        }
-                    });
+                    Application.Current.Dispatcher.Invoke(() => { Close(); });
 
                     /*Thread th = new Thread(openMainWindow);
                     th.SetApartmentState(ApartmentState.STA);
