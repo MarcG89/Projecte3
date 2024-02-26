@@ -27,13 +27,13 @@ namespace ApiMusica.Controllers.v1
             try
             {
                 // Subir las imágenes a GridFS y obtener los ObjectIds
-                var frontCoverId = await _albumService.SubirImagenAsync(albumModel.FrontCover, $"{albumModel.Titol}_FrontCover", "image/jpeg");
-                var backCoverId = await _albumService.SubirImagenAsync(albumModel.BackCover, $"{albumModel.Titol}_BackCover", "image/jpeg");
+                var frontCoverId = await _albumService.SubirImagenAsync(albumModel.FrontCover, $"{albumModel.Name}_FrontCover", "image/jpeg");
+                var backCoverId = await _albumService.SubirImagenAsync(albumModel.BackCover, $"{albumModel.Name}_BackCover", "image/jpeg");
 
                 // Crear un nuevo objeto Album y establecer los ObjectID de las imágenes
                 var album = new Album
                 {
-                    Titol = albumModel.Titol,
+                    Name = albumModel.Name,
                     Year = albumModel.Year,
                     Gender = albumModel.Gender,
                     FrontCover = frontCoverId.ToString(),
@@ -52,12 +52,12 @@ namespace ApiMusica.Controllers.v1
             }
         }
 
-        [HttpGet("{titol}")]
-        public async Task<ActionResult<Album>> GetByTitol(string titol)
+        [HttpGet("{Name}")]
+        public async Task<ActionResult<Album>> GetByTitol(string Name)
         {
             try
             {
-                var album = await _albumService.GetByTitol(titol);
+                var album = await _albumService.GetByTitol(Name);
                 if (album == null)
                 {
                     return NotFound();

@@ -41,9 +41,9 @@ namespace ApiMusica.Controllers.v1.Services
             }
         }
 
-        public async Task<Album> GetByTitol(string titol)
+        public async Task<Album> GetByTitol(string Name)
         {
-            return await _albumCollection.Find(album => album.Titol == titol).FirstOrDefaultAsync();
+            return await _albumCollection.Find(album => album.Name == Name).FirstOrDefaultAsync();
         }
         public async Task<List<Album>> GetAll()
         {

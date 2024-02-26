@@ -2,7 +2,7 @@
 {
     public class AlbumUploadModel
     {
-        public string Titol { get; set; }
+        public string Name { get; set; }
         public int Year { get; set; }
         public string Gender { get; set; }
 
