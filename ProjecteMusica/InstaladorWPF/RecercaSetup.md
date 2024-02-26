@@ -17,23 +17,23 @@
 
 ![Carpetes SetupProject](Captures/afegirSetupProject.png)
 <ul>
-  <li><strong>Application’s folder</strong> (on es guarden els  fitxers .exe)</li>
+  <li><strong>Application’s folder</strong> (on guardarem la referència del projecte i la icona de l'instal·lador)</li>
   <li><strong>User’s Desktop</strong></li>
   <li><strong>User’s Programs Menu</strong></li>
 </ul>
 
 ![Project Output](Captures/projectOutput.png)
-<p>Tot seguit, copiem el fitxer els fitxers <i>.exe</i> i <i>.dll</i> necessaris. Per fer-ho, has d’entrar dins de la <i>Application’s folder</i>, fer clic dret en ella, escollir l’opció <i>Add</i> i, dins d’aquesta, triar l’opció <i>Project Output</i> o <i>Resultados del proyecto…</i></p>
+<p>Tot seguit, afegirem la referència del projecte MusicalyAdminApp. Per fer-ho, has d’entrar dins de la <i>Application’s folder</i>, fer clic dret en ella, escollir l’opció <i>Add</i> i, dins d’aquesta, triar l’opció <i>Project Output</i> o <i>Resultados del proyecto…</i></p>
 
 <p>Se t’obrirà un conjunt d’opcions, on has d’escollir l'opció <i>Publicar elementos</i>.</p>
 
-![Fitxer Exe Projecte Setup](Captures/fitxerExe.png)
-<p>Amb això ja tens el fitxer .exe afegit.</p>
+![Fitxer Exe Projecte Setup](Captures/projectOutputAfegit.png)
+<p>Amb això ja tens la referència del projecte afegida.</p>
 
 <h2>Afegir shortcut</h2>
 
 ![ShortCut afegida](Captures/shortCutAfegida.png)
-<p>Per afegir un shortcut (en aquest cas es diu <i>AppSetupFile</i>), has de fer clic dret al fitxer <i>.exe</i> i després escollir la primera opció (que et dirà <i>Create Shortcut</i>). Pots canviar-li el nom sempre que vulguis.</p>
+<p>Per afegir un shortcut (en aquest cas es diu <i>ReproductorInstaller</i>), has de fer clic dret a la referència del projecte i després escollir la primera opció (que et dirà <i>Create Shortcut</i>). Pots canviar-li el nom sempre que vulguis.</p>
 
 <h3>Afegir i assignar icona al Shortcut</h3>
 
@@ -63,5 +63,5 @@
 ![Administrador Configuracio](Captures/administradorConfiguracio.png)
 <p>Finalment, només ens faltarà anar a l'Administrador de configuració.  Aquest és l'apartat on es defineixen les opcions del compilador i els valors de compilació que s'utilitzen quan es compila el projecte. Les configuracions que tens per defecte són <i>Debug</i> i <i>Release</i>. La configuració <i>Debug</i> admet la depuració d'una aplicació, mentre que la <i>Release</i> compila una versió de l'aplicació que es pot implementar. En aquest cas, apliquem la configuració <i>Release</i> a tots els projectes menys el que utilitzarem per fer el Setup.</p>
 
-![Fitxer .exe creat](/Captures/fitxerExeCreat.png)
+![Fitxer .exe creat](Captures/fitxerExeCreat.png)
 <p>Finalment, només et quedarà compilar el projecte perquè se't generi el fitxer .exe i a punt per executar-lo.</p>
