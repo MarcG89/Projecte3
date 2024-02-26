@@ -1,8 +1,10 @@
 package com.example.appmusicandroid.Model
 
+import android.graphics.Bitmap
+
 data class Album (
-    val Name : String,
-    val Artist : String,
-    val FrontCover: ByteArray,
-    val BackCover: ByteArray
+    val Name : String? = null,
+    val Artist : String? = null,
+    val FrontCover: Bitmap? = null,
+    val BackCover: Bitmap? = null
 )

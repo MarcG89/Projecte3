@@ -20,20 +20,20 @@ class AlbumAdapter(private val albums: List<Album>) : RecyclerView.Adapter<Album
 
         holder.titleTextView.text = album.Name
         holder.artistTextView.text = album.Artist
-        //holder.albumImageView
 
-        /* Cargar la imagen del frontCover usando Glide u otra biblioteca de carga de imágenes
         Glide.with(holder.itemView)
             .load(album.FrontCover)
-            .into(holder.FrontCoverImageView)
-        */
-    }
+            .into(holder.albumImageView)
 
-    override fun getItemCount() = albums.size
+    }
 
     inner class AlbumViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val titleTextView: TextView = itemView.findViewById(R.id.textName)
         val artistTextView: TextView = itemView.findViewById(R.id.artistName)
-        //val albumImageView: ImageView = itemView.findViewById(R.id.imageView)
+        val albumImageView: ImageView = itemView.findViewById(R.id.imageView)
     }
+
+
+    override fun getItemCount() = albums.size
+
 }
