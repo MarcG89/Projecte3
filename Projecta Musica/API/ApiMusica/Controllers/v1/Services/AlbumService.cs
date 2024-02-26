@@ -54,5 +54,10 @@ namespace ApiMusica.Controllers.v1.Services
             return await _gridFSBucket.OpenDownloadStreamAsync(frontCoverId);
         }
 
+        public async Task<Stream> GetBackCover(ObjectId backCoverID)
+        {
+            return await _gridFSBucket.OpenDownloadStreamAsync(backCoverID);
+        }
+
     }
 }

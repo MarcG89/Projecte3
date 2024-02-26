@@ -111,5 +111,30 @@ namespace ApiMusica.Controllers.v1
             }
         }
 
+        [HttpGet("getFrontCover/{frontCoverId}")]
+        public async Task<IActionResult> GetBackCoverASync(string backCoverId)
+        {
+            if (!ObjectId.TryParse(backCoverId, out ObjectId objectId))
+            {
+                return BadRequest("Invalid ObjectId format.");
+            }
+
+            try
+            {
+                // Get front cover stream
+                Stream frontCoverStream = await _albumService.GetFrontCoverAsync(objectId);
+
+                // Set content type
+                HttpContext.Response.ContentType = "image/jpeg"; // Change the content type if necessary
+
+                // Return the front cover stream as a file result
+                return File(frontCoverStream, "image/jpeg"); // Change the file format if necessary
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Failed to get front cover: {ex.Message}");
+            }
+        }
+
     }
 }

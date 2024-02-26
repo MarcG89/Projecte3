@@ -1270,11 +1270,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fdily\\OneDrive\\Escritorio\\Projecte 3\\Projecte3\\Projecta Musica\\API\\ApiMusica\\ApiMusica.csproj",
+      "projectUniqueName": "C:\\Users\\fdily\\OneDrive\\Escritorio\\Projecte3\\Projecte3\\Projecta Musica\\API\\ApiMusica\\ApiMusica.csproj",
       "projectName": "ApiMusica",
-      "projectPath": "C:\\Users\\fdily\\OneDrive\\Escritorio\\Projecte 3\\Projecte3\\Projecta Musica\\API\\ApiMusica\\ApiMusica.csproj",
+      "projectPath": "C:\\Users\\fdily\\OneDrive\\Escritorio\\Projecte3\\Projecte3\\Projecta Musica\\API\\ApiMusica\\ApiMusica.csproj",
       "packagesPath": "C:\\Users\\fdily\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fdily\\OneDrive\\Escritorio\\Projecte 3\\Projecte3\\Projecta Musica\\API\\ApiMusica\\obj\\",
+      "outputPath": "C:\\Users\\fdily\\OneDrive\\Escritorio\\Projecte3\\Projecte3\\Projecta Musica\\API\\ApiMusica\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
