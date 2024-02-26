@@ -10,11 +10,12 @@
 
 <h2>Procés</h2>
 
-![Afegir projecte Storage](Captures/afegirStorageSetup.png)
+![Afegir projecte Setup](Captures/afegirSetupProject.png)
 <p>Quan ja tinguis instal·lada l’extensió, crea un segon projecte dins la mateixa solució que més endavant ens servirà per fer el Setup.</p>
 
 <p>Un cop hagis creat el projecte Setup, podràs veure aquestes tres carpetes:</p>
 
+![Carpetes SetupProject](Captures/afegirSetupProject.png)
 <ul>
   <li><strong>Application’s folder</strong> (on es guarden els  fitxers .exe)</li>
   <li><strong>User’s Desktop</strong></li>
@@ -51,16 +52,16 @@
 
 <p>Quan ja tinguis la icona afegida al ShortCut, mou aquest dins de la carpeta <i>User's desktop</i> i crear una altre ShortCut amb la mateixa icona per també afegir-la dins de la carpeta <i>User's Programs Menu</i> o la carpeta del menú del programa.</p>
 
-![Propietats de StorageSetUp](Captures/propietatsStorageSetUp.png)
-<p>Si vols, pots configurar les propietats del projecte de l'StorageSetup com ara el nom de l'autor o una descripció</p>
+![Propietats de SetupProject](Captures/propietatsSetupProject.png)
+<p>Si vols, pots configurar les propietats del projecte del SetupProject com ara el nom de l'autor o una descripció</p>
 
 <h2>Prerequisits i administració de configuració</h2>
 
 ![Accedir a prerequisits projecte](Captures/accedirPrerequisitsProjecte.png)
-<p>Per configurar els prerequisits del projecte, hem d'accedir a les propietats del projecte i fer clic sobre el botó <i>Prerequisites</i>. Per defecte tindràs activat el Microsoft .NET Framework.</p>
+<p>Per configurar els prerequisits del projecte, hem d'accedir a les propietats del projecte i fer clic sobre el botó <i>Prerequisites</i>. Per defecte tindràs activat el <i>Microsoft .NET Framework</i>.</p>
 
 ![Administrador Configuracio](Captures/administradorConfiguracio.png)
-<p>Finalment, només ens faltarà anar a l'Administrador de configuració.  Aquest és l'apartat on es defineixen les opcions del compilador i els valors de compilació que s'utilitzen quan es compila el projecte. Les configuracions que tens per defecte són <i>Debug</i> i <i>Release</i>. La configuració <i>Release</i> admet la depuració d'una aplicació, mentre que la <i>Release</i> compila una versió de l'aplicació que es pot implementar. En aquest cas, deixem la configuració <i>Release</i> per les dos configuracions.</p>
+<p>Finalment, només ens faltarà anar a l'Administrador de configuració.  Aquest és l'apartat on es defineixen les opcions del compilador i els valors de compilació que s'utilitzen quan es compila el projecte. Les configuracions que tens per defecte són <i>Debug</i> i <i>Release</i>. La configuració <i>Debug</i> admet la depuració d'una aplicació, mentre que la <i>Release</i> compila una versió de l'aplicació que es pot implementar. En aquest cas, apliquem la configuració <i>Release</i> a tots els projectes menys el que utilitzarem per fer el Setup.</p>
 
 ![Fitxer .exe creat](/Captures/fitxerExeCreat.png)
 <p>Finalment, només et quedarà compilar el projecte perquè se't generi el fitxer .exe i a punt per executar-lo.</p>
