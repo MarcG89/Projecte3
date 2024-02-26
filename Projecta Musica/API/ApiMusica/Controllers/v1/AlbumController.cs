@@ -111,7 +111,7 @@ namespace ApiMusica.Controllers.v1
             }
         }
 
-        [HttpGet("getFrontCover/{frontCoverId}")]
+        [HttpGet("getBackCover/{backCoverId}")]
         public async Task<IActionResult> GetBackCoverASync(string backCoverId)
         {
             if (!ObjectId.TryParse(backCoverId, out ObjectId objectId))
@@ -122,7 +122,7 @@ namespace ApiMusica.Controllers.v1
             try
             {
                 // Get front cover stream
-                Stream frontCoverStream = await _albumService.GetFrontCoverAsync(objectId);
+                Stream frontCoverStream = await _albumService.GetBackCover(objectId);
 
                 // Set content type
                 HttpContext.Response.ContentType = "image/jpeg"; // Change the content type if necessary
