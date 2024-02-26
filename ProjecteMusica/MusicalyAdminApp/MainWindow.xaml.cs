@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using iText.Commons.Utils;
 using MusicalyAdminApp.API.APISQL;
 using MusicalyAdminApp.API.APISQL.Taules;
 using MusicalyAdminApp.View;
@@ -23,6 +25,7 @@ namespace MusicalyAdminApp
         private string jsonContent;
         private dynamic jsonObj;
         private string path;
+
         /// <summary>
         /// Constructor for MainWindow class.
         /// </summary>
@@ -35,19 +38,42 @@ namespace MusicalyAdminApp
             this.jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(this.jsonContent);
             this.path = jsonObj["dockerDirectory"];
 
-            if (!Directory.Exists(path))
-            {
-                ChooseDockerAndApi cda = new ChooseDockerAndApi();
-                cda.Show();
-                Close();
-            }
-            else
+            if (this.CheckDocker().StartsWith("Client:"))
             {
                 apiSql = new Apisql();
                 // Initialize and display songs and albums.
                 ShowSongs();
                 ShowAlbums();
                 WindowState = WindowState.Maximized;
+            } else
+            {
+                ChooseDockerAndApi cda = new ChooseDockerAndApi();
+                cda.Show();
+                Close();
+            }
+        }
+
+        private string CheckDocker()
+        {
+            try
+            {
+                Process process = new Process();
+                process.StartInfo.FileName = "docker";
+                process.StartInfo.Arguments = "versiofn";
+                process.StartInfo.RedirectStandardOutput = true;
+                process.StartInfo.RedirectStandardError = true;
+                process.StartInfo.UseShellExecute = false;
+                process.StartInfo.CreateNoWindow = true;
+
+                process.Start();
+                process.WaitForExit();
+
+                string output = process.StandardOutput.ReadToEnd();
+                return output;
+            }
+            catch (Exception ex)
+            {
+                return ex.ToString();
             }
         }
 

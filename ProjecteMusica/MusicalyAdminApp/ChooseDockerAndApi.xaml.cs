@@ -59,7 +59,7 @@ namespace MusicalyAdminApp
         /// guardarles en el fitxer Config\\config_doc.json i cridar-les en el moment
         /// de fer les peticions
         /// </summary>
-            private async void setApi(object sender, RoutedEventArgs e)
+        private async void setApi(object sender, RoutedEventArgs e)
         {
             this.apiSql = this.menuApiSQL.txtIP.Text;
             this.apiMongoDB = this.menuApiMongoDB.txtIP.Text;
