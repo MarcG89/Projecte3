@@ -24,7 +24,7 @@
 ![Project Output](Captures/projectOutput.png)
 <p>Tot seguit, copiem el fitxer els fitxers <i>.exe</i> i <i>.dll</i> necessaris. Per fer-ho, has d’entrar dins de la <i>Application’s folder</i>, fer clic dret en ella, escollir l’opció <i>Add</i> i, dins d’aquesta, triar l’opció <i>Project Output</i> o <i>Resultados del proyecto…</i></p>
 
-<p>Se t’obrirà un conjunt d’opcions, on has d’escollir <i>Primary output</i> o <i>Resultado principal</i>.</p>
+<p>Se t’obrirà un conjunt d’opcions, on has d’escollir l'opció <i>Publicar elementos</i>.</p>
 
 ![Fitxer Exe Projecte Setup](Captures/fitxerExe.png)
 <p>Amb això ja tens el fitxer .exe afegit.</p>
