@@ -2,10 +2,10 @@
 
 <h2>Requeriments</h2>
 
-![Descarregar Microsoft Visual Studio Installer Projects](/Captures/descarregarExtensio.png)
+![Descarregar Microsoft Visual Studio Installer Projects](Captures/descarregarExtensio.png)
 <p>Abans de començar el procés, cal que primer et descarreguis l’extensió anomenada <strong>Microsoft Visual Studio Installer Projects</strong>.</p>
 
-![Instal·lar Microsoft Visual Studio Installer Projects](/Captures/instalarExtensio.png)
+![Instal·lar Microsoft Visual Studio Installer Projects](Captures/instalarExtensio.png)
 <p>Seguidament, has de tancar Visual Studio perquè s’instal·li l’extensió i s’apliquin els canvis. T’hauria d’aparèixer aquesta finestra on has de fer clic al botó <i>Modify</i>.
 
 <h2>Procés</h2>
@@ -21,45 +21,45 @@
   <li><strong>User’s Programs Menu</strong></li>
 </ul>
 
-![Project Output](/Captures/projectOutput.png)
+![Project Output](Captures/projectOutput.png)
 <p>Tot seguit, copiem el fitxer els fitxers <i>.exe</i> i <i>.dll</i> necessaris. Per fer-ho, has d’entrar dins de la <i>Application’s folder</i>, fer clic dret en ella, escollir l’opció <i>Add</i> i, dins d’aquesta, triar l’opció <i>Project Output</i> o <i>Resultados del proyecto…</i></p>
 
 <p>Se t’obrirà un conjunt d’opcions, on has d’escollir <i>Primary output</i> o <i>Resultado principal</i>.</p>
 
-![Fitxer Exe Projecte Setup](/Captures/fitxerExe.png)
+![Fitxer Exe Projecte Setup](Captures/fitxerExe.png)
 <p>Amb això ja tens el fitxer .exe afegit.</p>
 
 <h2>Afegir shortcut</h2>
 
-![ShortCut afegida](/Captures/shortCutAfegida.png)
+![ShortCut afegida](Captures/shortCutAfegida.png)
 <p>Per afegir un shortcut (en aquest cas es diu <i>AppSetupFile</i>), has de fer clic dret al fitxer <i>.exe</i> i després escollir la primera opció (que et dirà <i>Create Shortcut</i>). Pots canviar-li el nom sempre que vulguis.</p>
 
 <h3>Afegir i assignar icona al Shortcut</h3>
 
-![Icona ShortCut afegida](/Captures/iconaShortCutAfegida.png)
+![Icona ShortCut afegida](Captures/iconaShortCutAfegida.png)
 
 <p>En cas de que vulguis afegir una icona al Shortcut, has de fer clic drent, anar a l'opció <i>Add</i> i, dins d'aquesta, triar l'opció <i>File</i> per després buscar el fitxer que vols afegir. La que utilitzarem en aquest projecte és la que veus sota aquest paràgraf. Tingues en compte que només podràs utilitzar fitxers de tipus .ico</p>
 
-![Icona ShortCut a utilitzar](/Captures/iconaShortCut.ico)
+![Icona ShortCut a utilitzar](Captures/iconaShortCut.ico)
 
-![PropertiesWindow de ShortCut](/Captures/shortCutPropertiesWindow.png)
+![PropertiesWindow de ShortCut](Captures/shortCutPropertiesWindow.png)
 
 <p>Ja només ens falta vincular la icona amb el Shortcut, ho aconsegueixes fent clic dret sobre el ShortCut accedint a la <i>Properties Window</i> i finalment afegint la icona dins de l'atribut <i>Icon</i>.</p>
 
-![Guardar ShortCut al User's Desktop](/Captures/shortCutDinsDeUsersDesktop.png)
-![Guardar ShortCut al User's Programs Menu](/Captures/shortCutDinsDeUsersProgramsMenu.png)
+![Guardar ShortCut al User's Desktop](Captures/shortCutDinsDeUsersDesktop.png)
+![Guardar ShortCut al User's Programs Menu](Captures/shortCutDinsDeUsersProgramsMenu.png)
 
 <p>Quan ja tinguis la icona afegida al ShortCut, mou aquest dins de la carpeta <i>User's desktop</i> i crear una altre ShortCut amb la mateixa icona per també afegir-la dins de la carpeta <i>User's Programs Menu</i> o la carpeta del menú del programa.</p>
 
-![Propietats de StorageSetUp](/Captures/propietatsStorageSetUp.png)
+![Propietats de StorageSetUp](Captures/propietatsStorageSetUp.png)
 <p>Si vols, pots configurar les propietats del projecte de l'StorageSetup com ara el nom de l'autor o una descripció</p>
 
 <h2>Prerequisits i administració de configuració</h2>
 
-![Accedir a prerequisits projecte](/Captures/accedirPrerequisitsProjecte.png)
+![Accedir a prerequisits projecte](Captures/accedirPrerequisitsProjecte.png)
 <p>Per configurar els prerequisits del projecte, hem d'accedir a les propietats del projecte i fer clic sobre el botó <i>Prerequisites</i>. Per defecte tindràs activat el Microsoft .NET Framework.</p>
 
-![Administrador Configuracio](/Captures/administradorConfiguracio.png)
+![Administrador Configuracio](Captures/administradorConfiguracio.png)
 <p>Finalment, només ens faltarà anar a l'Administrador de configuració.  Aquest és l'apartat on es defineixen les opcions del compilador i els valors de compilació que s'utilitzen quan es compila el projecte. Les configuracions que tens per defecte són <i>Debug</i> i <i>Release</i>. La configuració <i>Release</i> admet la depuració d'una aplicació, mentre que la <i>Release</i> compila una versió de l'aplicació que es pot implementar. En aquest cas, deixem la configuració <i>Release</i> per les dos configuracions.</p>
 
 ![Fitxer .exe creat](/Captures/fitxerExeCreat.png)
