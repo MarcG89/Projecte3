@@ -1,10 +1,14 @@
 package com.example.appmusicandroid.Model
 
 import android.graphics.Bitmap
+import com.google.gson.annotations.SerializedName
 
 data class Album (
-    val Name : String? = null,
-    val Artist : String? = null,
-    val FrontCover: Bitmap? = null,
-    val BackCover: Bitmap? = null
+    val name: String,
+    val year: Int,
+    @SerializedName("frontCover") val frontCoverID: String? = null,
+    val frontCoverImage : Bitmap?,
+    @SerializedName("backCover") val  backCoverID: String? = null,
+    val backCoverImage : Bitmap? = null,
 )
+

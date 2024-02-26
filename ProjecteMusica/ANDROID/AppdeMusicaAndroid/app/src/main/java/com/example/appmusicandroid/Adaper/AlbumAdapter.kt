@@ -18,11 +18,11 @@ class AlbumAdapter(private val albums: List<Album>) : RecyclerView.Adapter<Album
     override fun onBindViewHolder(holder: AlbumViewHolder, position: Int) {
         val album = albums[position]
 
-        holder.titleTextView.text = album.Name
-        holder.artistTextView.text = album.Artist
+        holder.titleTextView.text = album.name
+        holder.artistTextView.text = album.year.toString()
 
         Glide.with(holder.itemView)
-            .load(album.FrontCover)
+            .load(album.frontCoverImage)
             .into(holder.albumImageView)
 
     }
