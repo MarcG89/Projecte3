@@ -1,10 +1,12 @@
 # Canvis API SQL
 
 ## Descripció
-Modificacions necessàries per actualitzar el projecte segons el nou model ER:
+Modificacions necessàries per actualitzar el projecte segons el nou model ER.
 
-
+Antic model:
 ![Antic model ER](anticModelER.png)
+
+Nou model:
 ![Nou model ER](nouModelER.png)
 
 
