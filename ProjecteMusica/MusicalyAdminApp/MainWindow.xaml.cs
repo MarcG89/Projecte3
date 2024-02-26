@@ -292,5 +292,10 @@ namespace MusicalyAdminApp
             PdfView pdfView = new PdfView();
             pdfView.Show();
         }
+
+        private void Viewbox_Loaded(object sender, RoutedEventArgs e)
+        {
+            // TODO: crida de les finestres
+        }
     }
 }

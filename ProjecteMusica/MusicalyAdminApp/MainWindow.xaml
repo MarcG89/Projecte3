@@ -9,7 +9,7 @@
         <Window.Background>
             <ImageBrush ImageSource="https://i.pinimg.com/736x/39/c7/1e/39c71e43cd06601a698edc75859dd674.jpg"/>
         </Window.Background>
-    <Viewbox>
+    <Viewbox Loaded="Viewbox_Loaded">
         <Grid>
             <Grid.ColumnDefinitions>
                 <!-- Nueva columna para el menú lateral -->
