@@ -1,4 +1,5 @@
 package com.example.appmusicandroid.Adaper
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.appmusicandroid.R
 import com.example.appmusicandroid.Model.Album
+import com.example.appmusicandroid.View.AlbumActivity
+
 class AlbumAdapter(private val albums: List<Album>) : RecyclerView.Adapter<AlbumAdapter.AlbumViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AlbumViewHolder {
@@ -25,14 +28,19 @@ class AlbumAdapter(private val albums: List<Album>) : RecyclerView.Adapter<Album
             .load(album.frontCoverImage)
             .into(holder.albumImageView)
 
+        holder.itemView.setOnClickListener {
+            val intent = Intent(holder.itemView.context, AlbumActivity::class.java)
+            holder.itemView.context.startActivity(intent)
+        }
+
     }
 
     inner class AlbumViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val titleTextView: TextView = itemView.findViewById(R.id.textName)
         val artistTextView: TextView = itemView.findViewById(R.id.artistName)
         val albumImageView: ImageView = itemView.findViewById(R.id.imageView)
-    }
 
+    }
 
     override fun getItemCount() = albums.size
 

@@ -78,8 +78,6 @@ class AlbumActivity : AppCompatActivity(){
                                             AlbumList.add(albumItem)
                                             recyclerView.adapter?.notifyDataSetChanged()
                                         }
-
-
                                     }
                                 }
                                 override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
