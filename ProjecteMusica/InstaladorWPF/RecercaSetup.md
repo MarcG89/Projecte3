@@ -74,3 +74,9 @@
 
 ![Aplicació afegida a l'Escriptori](Captures/appDesktop.png)
 <p>Quan hagis acabat tot el procés d'instal·lació, ja se t'haurà generat l'aplicació a l'escriptori i podràs provar-la.</p>
+
+![Finestra ChooseDockerAndApi](Captures/chooseDockerAndApi.png)
+<p>En cas de que no tinguis Docker instal·lat, veuràs la finestra <i>ChooseDockerAndApi</i></p>
+
+![Finestra MainWindow](Captures/mainWindow.png)
+<p>En cas contrari, veuràs la <i>MainWindow</i>.</p>
