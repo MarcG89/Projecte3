@@ -10,12 +10,11 @@ namespace MusicalyAdminApp.API.APISQL.Taules
     public class Album    
     {
         [Key]
-        public string? AlbumName { get; set; }
-
-        [Key]
+        public string? Titol { get; set; }
         public int Year { get; set; }
-        [Key]
-        public Guid SongUID { get; set; }
-        public Song? Song { get; set; }
+        public string Genre { get; set; }
+        public string FrontCover { get; set; }
+        public string BackCover { get; set; }
+        public ICollection<Song>? Songs { get; set; }
     }
 }
