@@ -101,7 +101,7 @@ namespace MusicalyAdminApp
             } 
             else
             {
-                Close();
+                MessageBox.Show("Has de tenir Docker instal·lat abans de crear el contenidor!");
             }
         }
 
