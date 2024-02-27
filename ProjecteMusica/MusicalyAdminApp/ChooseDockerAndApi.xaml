@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MusicalyAdminApp"
         mc:Ignorable="d"
-        Title="ChooseDockerAndApi" Height="450" Width="800">
+        Title="ChooseDockerAndApi" Height="450" Width="800" Loaded="DownloadInstaller">
     <Window.Background>
         <ImageBrush ImageSource="https://i.pinimg.com/736x/39/c7/1e/39c71e43cd06601a698edc75859dd674.jpg"/>
     </Window.Background>

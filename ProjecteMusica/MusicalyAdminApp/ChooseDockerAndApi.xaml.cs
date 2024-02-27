@@ -29,7 +29,10 @@ namespace MusicalyAdminApp
         private string apiSql;
         private string apiMongoDB;
         private string apiHistorial;
-        private string jsonRuta = "Config\\config_doc.json";
+        private string jsonRuta;
+        private string jsonContent;
+        private dynamic jsonObj;
+        private string urlDownloadDocker;
 
         private IPAddress ipSql;
         private IPAddress ipMongoDB;
@@ -73,6 +76,7 @@ namespace MusicalyAdminApp
                      IPAddress.TryParse(this.apiHistorial, out ipHistorial))
                 {
                     // Read configuration data from JSON file
+                    this.jsonRuta = "Config\\config_doc.json";
                     string jsonContent = File.ReadAllText(jsonRuta);
                     dynamic jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(jsonContent);
                     jsonObj["IPSQL"] = ipSql.ToString();
@@ -90,12 +94,43 @@ namespace MusicalyAdminApp
                 }
                 else
                 {
-                    MessageBox.Show("IPs en el format incorrecte");
+                    MessageBox.Show("IP/s en el format incorrecte");
                 }
             }
             else
             {
-                MessageBox.Show("Camps de text Buits");
+                MessageBox.Show("Camp/s de text Buit/s");
+            }
+        }
+
+        /// <summary>
+        /// Funció per descarregar l'instalador de Docker un cop s'ha carregat
+        /// la finestra ChooseDockerAndApi
+        /// </summary>
+        /// <param name="sender">The event sender.</param>
+        /// <param name="e">The event arguments.</param>
+        private void DownloadInstaller(object sender, RoutedEventArgs e)
+        {
+            this.jsonRuta = "Config\\config_doc.json";
+            this.jsonContent = File.ReadAllText(this.jsonRuta);
+            this.jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(this.jsonContent);
+            this.urlDownloadDocker = jsonObj["urlDownloadDocker"];
+            string installerFileName = "docker-installer.exe";
+
+            using (WebClient wc = new WebClient())
+            {
+                try
+                {
+                    if (!File.Exists(installerFileName))
+                    {
+                        wc.DownloadFile(this.urlDownloadDocker, installerFileName);
+                        MessageBox.Show("Instalador Descarregat");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al descarregar instal·lador de Docker: " + ex.ToString());
+                }
             }
         }
     }
