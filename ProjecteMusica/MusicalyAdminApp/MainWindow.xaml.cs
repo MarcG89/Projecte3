@@ -45,7 +45,7 @@ namespace MusicalyAdminApp
             {
                 Process process = new Process();
                 process.StartInfo.FileName = "docker";
-                process.StartInfo.Arguments = "versionb";
+                process.StartInfo.Arguments = "version";
                 process.StartInfo.RedirectStandardOutput = true;
                 process.StartInfo.RedirectStandardError = true;
                 process.StartInfo.UseShellExecute = false;

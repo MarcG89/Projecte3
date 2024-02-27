@@ -136,9 +136,9 @@ namespace MusicalyAdminApp
                     jsonObj["IPSQL"] = ipSql.ToString();
                     jsonObj["IPAudio"] = ipMongoDB.ToString();
                     jsonObj["IPHistorial"] = ipHistorial.ToString();
-                    jsonObj["urlSQL"] = "http://" + ipSql.ToString() + ":" + this.portSql + "/";
-                    jsonObj["urlHistorial"] = "http://" + ipHistorial.ToString() + ":" + this.portHistorial + "/";
-                    jsonObj["urlAudio"] = "http://" + ipMongoDB.ToString() + ":" + this.portMongoDB +  "/";
+                    jsonObj["urlSQL"] = "http://" + ipSql.ToString() + ":" + this.numPortSql + "/";
+                    jsonObj["urlAudio"] = "http://" + ipMongoDB.ToString() + ":" + this.numPortMongoDB + "/";
+                    jsonObj["urlHistorial"] = "http://" + ipHistorial.ToString() + ":" + this.numPortHistorial + "/";
                     string output = Newtonsoft.Json.JsonConvert.SerializeObject(jsonObj, Newtonsoft.Json.Formatting.Indented);
                     File.WriteAllText(jsonRuta, output);
 

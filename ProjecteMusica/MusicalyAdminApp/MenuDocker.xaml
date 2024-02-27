@@ -6,7 +6,9 @@
              xmlns:local="clr-namespace:MusicalyAdminApp"
              mc:Ignorable="d" Height="80" Width="207">
     <Grid>
-        <Label Content="Escull la versió de Docker a instalar:"  />
-        <ComboBox x:Name="opcionsDocker" Height="30" Width="100" Margin="51,36,56,14"/>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label Content="Escull la versió de Docker a instalar:"  />
+            <ComboBox x:Name="opcionsDocker" Height="30" Width="100"/>
+        </StackPanel>
     </Grid>
 </UserControl>
