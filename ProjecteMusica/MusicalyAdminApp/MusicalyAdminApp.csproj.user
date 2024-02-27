@@ -22,6 +22,9 @@
     <Compile Update="ControllerUser\InstrumentInfo.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="ControllerUser\MusiciansByAlbumInfo.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="MenuAPI.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -49,6 +52,9 @@
     <Compile Update="View\ViewMusician.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\ViewMusiciansByAlbum.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\ViewUpSong.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -67,6 +73,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ControllerUser\InstrumentInfo.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ControllerUser\MusiciansByAlbumInfo.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MenuAPI.xaml">
@@ -100,6 +109,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\ViewMusician.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ViewMusiciansByAlbum.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\ViewUpSong.xaml">
