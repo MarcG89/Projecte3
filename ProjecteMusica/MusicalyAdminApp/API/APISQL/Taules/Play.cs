@@ -9,19 +9,18 @@ namespace MusicalyAdminApp.API.APISQL.Taules
 {
     public class Play
     {
-        public Guid UIDSong { get; set; }
-        public ICollection<Song> Songs { get; set; } = new List<Song>();
+        public string? BandName { get; set; }
+        public DateTime BandDateFoundation { get; set; }
+        public Band? Band { get; set; }
 
-        public string? NameMusician { get; set; }
-        public ICollection<Musician> Musicians { get; set; } = new List<Musician>();
+        public string? MusicianName { get; set; }
+        public Musician? Musician { get; set; }
 
-        public string? NameBand { get; set; }
-        public ICollection<Band> Bands { get; set; } = new List<Band>();
+        public string? InstrumentName { get; set; }
+        public Instrument? Instrument { get; set; }
 
-        public string? NameInstrument { get; set; }
+        public Guid SongUID { get; set; }
+        public Song? Song { get; set; }
 
-        public ICollection<Instrument> Instruments { get; set; } = new List<Instrument>();
-
-       
     }
 }
