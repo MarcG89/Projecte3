@@ -4,9 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MusicalyAdminApp"
-             mc:Ignorable="d" Height="75" Width="193">
+             mc:Ignorable="d" Height="186" Width="199">
     <Grid>
         <Label Content="IP:" HorizontalAlignment="Left" Margin="22,0,0,0" VerticalAlignment="Center"/>
-        <TextBox x:Name="txtIP" HorizontalAlignment="Left" Margin="50,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" RenderTransformOrigin="0.468,-0.384"/>
+        <TextBox x:Name="txtIP" HorizontalAlignment="Left" Margin="55,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" RenderTransformOrigin="0.468,-0.384"/>
+
+        <Label Content="Port:" HorizontalAlignment="Left" Margin="21,124,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPort" HorizontalAlignment="Left" Margin="54,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.468,-0.384"/>
     </Grid>
 </UserControl>

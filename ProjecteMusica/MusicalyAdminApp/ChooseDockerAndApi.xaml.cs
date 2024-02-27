@@ -30,6 +30,9 @@ namespace MusicalyAdminApp
         private string apiSql;
         private string apiMongoDB;
         private string apiHistorial;
+        private string portSql;
+        private string portMongoDB;
+        private string portHistorial;
         private string jsonRuta;
         private string jsonContent;
         private dynamic jsonObj;
@@ -38,6 +41,9 @@ namespace MusicalyAdminApp
         private IPAddress ipSql;
         private IPAddress ipMongoDB;
         private IPAddress ipHistorial;
+        private int numPortSql;
+        private int numPortMongoDB;
+        private int numPortHistorial;
         public ChooseDockerAndApi()
         {
             InitializeComponent(); 
@@ -109,13 +115,19 @@ namespace MusicalyAdminApp
             this.apiSql = this.menuApiSQL.txtIP.Text;
             this.apiMongoDB = this.menuApiMongoDB.txtIP.Text;
             this.apiHistorial = this.menuApiHistorial.txtIP.Text;
+            this.portSql = this.menuApiSQL.txtPort.Text;
+            this.portMongoDB = this.menuApiMongoDB.txtPort.Text;
+            this.portHistorial = this.menuApiHistorial.txtPort.Text;
 
-            if (this.apiSql != "" && this.apiMongoDB != ""
-            && this.apiHistorial != "")
+            if (this.apiSql != "" && this.apiMongoDB != "" && this.apiHistorial != "" &&
+                this.portSql != "" && this.portMongoDB != "" && this.portHistorial != "")
             {
                 if (IPAddress.TryParse(this.apiSql, out ipSql) &&
                      IPAddress.TryParse(this.apiMongoDB, out ipMongoDB) &&
-                     IPAddress.TryParse(this.apiHistorial, out ipHistorial))
+                     IPAddress.TryParse(this.apiHistorial, out ipHistorial) &&
+                     int.TryParse(this.portSql, out this.numPortSql) &&
+                     int.TryParse(this.portMongoDB, out this.numPortMongoDB) &&
+                     int.TryParse(this.portHistorial, out this.numPortHistorial))
                 {
                     // Read configuration data from JSON file
                     this.jsonRuta = "Config\\config_doc.json";
@@ -124,9 +136,9 @@ namespace MusicalyAdminApp
                     jsonObj["IPSQL"] = ipSql.ToString();
                     jsonObj["IPAudio"] = ipMongoDB.ToString();
                     jsonObj["IPHistorial"] = ipHistorial.ToString();
-                    jsonObj["urlSQL"] = "http://" + ipSql.ToString() + ":5095/";
-                    jsonObj["urlHistorial"] = "http://" + ipHistorial.ToString() + ":5042/";
-                    jsonObj["urlAudio"] = "http://" + ipMongoDB.ToString() + ":5180/";
+                    jsonObj["urlSQL"] = "http://" + ipSql.ToString() + ":" + this.portSql + "/";
+                    jsonObj["urlHistorial"] = "http://" + ipHistorial.ToString() + ":" + this.portHistorial + "/";
+                    jsonObj["urlAudio"] = "http://" + ipMongoDB.ToString() + ":" + this.portMongoDB +  "/";
                     string output = Newtonsoft.Json.JsonConvert.SerializeObject(jsonObj, Newtonsoft.Json.Formatting.Indented);
                     File.WriteAllText(jsonRuta, output);
 
@@ -139,7 +151,7 @@ namespace MusicalyAdminApp
                 }
                 else
                 {
-                    MessageBox.Show("IP/s en el format incorrecte");
+                    MessageBox.Show("IP/s i/o port/s en el format incorrecte");
                 }
             }
             else
