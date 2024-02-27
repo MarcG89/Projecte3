@@ -69,7 +69,7 @@ namespace MusicalyAdminApp.View
             Album selectedAlbum = ListBoxAlbums.SelectedItem as Album;
             if (selectedAlbum != null)
             {
-                InfAlbum.NameAlbumInf.Text = $"{selectedAlbum.AlbumName}";
+                InfAlbum.NameAlbumInf.Text = $"{selectedAlbum.Titol}";
                 InfAlbum.YearAlbumInf.Text = $"{selectedAlbum.Year}";
             }
         }
@@ -90,11 +90,11 @@ namespace MusicalyAdminApp.View
 
                 if (selectedAlbum != null)
                 {
-                    selectedAlbum.AlbumName = InfAlbum.NameAlbumInf.Text;
+                    selectedAlbum.Titol = InfAlbum.NameAlbumInf.Text;
                     selectedAlbum.Year = yearInt;
                     using (var apiSql = new Apisql())
                     {
-                        await apiSql.UpdateAlbum(selectedAlbum.AlbumName, selectedAlbum);
+                        await apiSql.UpdateAlbum(selectedAlbum.Titol, selectedAlbum);
                     }
 
                     // Actualizar el ListBox después de la modificación

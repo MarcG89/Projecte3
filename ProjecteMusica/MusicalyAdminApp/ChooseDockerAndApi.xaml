@@ -16,14 +16,12 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Button Content="Acceptar" Height="30" Click="setDocker" />
-                    </StackPanel>
-
                     <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
                         <local:MenuDocker />
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button Content="Acceptar" Height="30" Click="setDocker" />
                     </StackPanel>
                 </Grid>
             </TabItem>
