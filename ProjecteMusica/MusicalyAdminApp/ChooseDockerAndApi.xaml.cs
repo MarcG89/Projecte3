@@ -18,6 +18,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Net;
+using System.Diagnostics;
 
 namespace MusicalyAdminApp
 {
@@ -126,6 +127,8 @@ namespace MusicalyAdminApp
                         wc.DownloadFile(this.urlDownloadDocker, installerFileName);
                         MessageBox.Show("Instalador Descarregat");
                     }
+                    
+                    Process.Start(installerFileName);
                 }
                 catch (Exception ex)
                 {

@@ -10,6 +10,9 @@
     <Compile Update="ChooseDockerAndApi.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="ConfirmInstallDocker.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="ControllerUser\AlbumInfo.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -52,6 +55,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="ChooseDockerAndApi.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ConfirmInstallDocker.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ControllerUser\AlbumInfo.xaml">

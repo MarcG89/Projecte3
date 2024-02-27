@@ -278,6 +278,14 @@ namespace MusicalyAdminApp
             pdfView.Show();
         }
 
+        /// <summary>
+        /// Funció que s'executa en el moment de carregar-se el MainWindow, on es comprova
+        /// si tenim el Docker instal·lat mitjançant la comanda "docker version". Si ja
+        /// el tens instal·lat, t'obrirà la MainWindow. En cas contrari, t'obrirà la 
+        /// ChooseDockerAndApi
+        /// </summary>
+        /// <param name="sender">The event sender.</param>
+        /// <param name="e">The event arguments.</param>
         private void Viewbox_Loaded(object sender, RoutedEventArgs e)
         {
             this.jsonRuta = "Config\\config_doc.json";
