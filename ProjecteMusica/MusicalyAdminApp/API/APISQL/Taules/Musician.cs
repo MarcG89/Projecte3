@@ -17,6 +17,6 @@ namespace MusicalyAdminApp.API.APISQL.Taules
         public int? Age { get; set; }
 
         public ICollection<Play> Plays { get; set; } = new List<Play>();
-        public ICollection<Band> Bands { get; set; } = new List<Band>();
+        public ICollection<BandMusician> Bands { get; set; } = new List<BandMusician>();
     }
 }
