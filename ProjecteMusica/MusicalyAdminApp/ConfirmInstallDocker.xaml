@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MusicalyAdminApp"
         mc:Ignorable="d"
-        Title="ConfirmInstallDocker" Height="150" Width="400" MinHeight="150" MinWidth="400">
+        Title="ConfirmInstallDocker" Height="150" Width="300" MinHeight="150" MinWidth="300">
     <Window.Background>
         <ImageBrush ImageSource="https://i.pinimg.com/736x/39/c7/1e/39c71e43cd06601a698edc75859dd674.jpg"/>
     </Window.Background>
@@ -23,8 +23,8 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Content="Sí" Width="30" />
-                <Button Grid.Column="1" Content="No" Width="30" />
+                <Button Grid.Column="0" Content="Sí" Width="30" Click="confirm" />
+                <Button Grid.Column="1" Content="No" Width="30" Click="closeWindow" />
             </Grid>
         </StackPanel>
     </Grid>

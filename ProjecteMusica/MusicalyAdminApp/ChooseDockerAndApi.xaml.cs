@@ -52,10 +52,51 @@ namespace MusicalyAdminApp
             mw.Show();
         }
 
+        /// <summary>
+        /// Funció per comprovar si tens el docker instal·lat executant la comanda
+        /// "docker version" mitjançant un objecte de la classe Process.
+        /// </summary>
+        /// <returns>El valor retornat de la comanda executada</returns>
+        private string CheckDocker()
+        {
+            try
+            {
+                Process process = new Process();
+                process.StartInfo.FileName = "docker";
+                process.StartInfo.Arguments = "version";
+                process.StartInfo.RedirectStandardOutput = true;
+                process.StartInfo.RedirectStandardError = true;
+                process.StartInfo.UseShellExecute = false;
+                process.StartInfo.CreateNoWindow = true;
 
+                process.Start();
+                process.WaitForExit();
+
+                string output = process.StandardOutput.ReadToEnd();
+                return output;
+            }
+            catch (Exception ex)
+            {
+                return ex.ToString();
+            }
+        }
+
+        /// <summary>
+        /// Funció que s'executa en el moment de fer clic al botó per 
+        /// crear el contenidor de Docker
+        /// </summary>
+        /// <param name="sender">The event sender.</param>
+        /// <param name="e">The event arguments.</param>
         private async void setDocker(object sender, RoutedEventArgs e)
         {
-            this.tabItemApi.IsEnabled = true;
+            if (this.CheckDocker().StartsWith("Client:"))
+            {
+                this.tabItemApi.IsEnabled = true;
+            } 
+            else
+            {
+                Close();
+            }
         }
 
         /// <summary>
@@ -125,10 +166,10 @@ namespace MusicalyAdminApp
                     if (!File.Exists(installerFileName))
                     {
                         wc.DownloadFile(this.urlDownloadDocker, installerFileName);
-                        MessageBox.Show("Instalador Descarregat");
+                        MessageBox.Show("Fitxer .exe Descarregat");
                     }
-                    
-                    Process.Start(installerFileName);
+                    ConfirmInstallDocker cid = new ConfirmInstallDocker();
+                    cid.ShowDialog();
                 }
                 catch (Exception ex)
                 {
