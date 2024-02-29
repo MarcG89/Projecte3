@@ -4,8 +4,14 @@ import android.graphics.Bitmap
 import com.google.gson.annotations.SerializedName
 
 data class Song(
-    val Title: String
+    @SerializedName("\$id") val id : Int,
+    @SerializedName("\$values") val values : List<SongSql>
 )
+
+data class SongSql(
+    @SerializedName("title") val title: String,
+)
+
 
 data class Audio(
     @SerializedName("Id") val id: String?,
