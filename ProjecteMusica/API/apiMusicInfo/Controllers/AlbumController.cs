@@ -25,9 +25,9 @@ namespace apiMusicInfo.Controllers
         }
 
         [HttpGet("{title}")]
-        public async Task<ActionResult<Album>> GetAlbum(string title)
+        public async Task<ActionResult<Album>> GetAlbum(string title, int year)
         {
-            var album = await _albumService.GetAlbum(title);
+            var album = await _albumService.GetAlbum(title, year);
 
             if (album == null)
             {
@@ -41,13 +41,13 @@ namespace apiMusicInfo.Controllers
         public async Task<ActionResult<Album>> PostAlbum(Album album)
         {
             await _albumService.CreateAlbum(album);
-            return CreatedAtAction(nameof(GetAlbum), new { title = album.Titol }, album);
+            return CreatedAtAction(nameof(GetAlbum), new { title = album.Name }, album);
         }
 
         [HttpPut("{title}")]
         public async Task<IActionResult> PutAlbum(string title, Album album)
         {
-            if (title != album.Titol)
+            if (title != album.Name)
             {
                 return BadRequest();
             }
@@ -58,16 +58,24 @@ namespace apiMusicInfo.Controllers
         }
 
         [HttpDelete("{title}")]
-        public async Task<IActionResult> DeleteAlbum(string title)
+        public async Task<IActionResult> DeleteAlbum(string title, int year)
         {
-            var albumToDelete = await _albumService.GetAlbum(title);
+            var albumToDelete = await _albumService.GetAlbum(title, year);
             if (albumToDelete == null)
             {
                 return NotFound();
             }
 
-            await _albumService.DeleteAlbum(albumToDelete.Titol);
+            await _albumService.DeleteAlbum(albumToDelete.Name);
             return NoContent();
+        }
+
+        // Nueva acción para obtener canciones relacionadas con un álbum
+        [HttpGet("{title}/songs")]
+        public async Task<ActionResult<IEnumerable<Song>>> GetSongsByAlbum(string title)
+        {
+            var songs = await _albumService.GetSongsByAlbum(title);
+            return Ok(songs);
         }
     }
 }
