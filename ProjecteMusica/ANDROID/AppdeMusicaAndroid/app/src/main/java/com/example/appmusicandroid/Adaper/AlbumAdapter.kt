@@ -34,6 +34,7 @@ class AlbumAdapter(private val albums: List<Album>) : RecyclerView.Adapter<Album
             intent.putExtra("Name", album.name)
             intent.putExtra("Year", album.year)
             intent.putExtra("FrontCover", album.frontCoverID)
+            intent.putExtra("BackCover", album.backCoverID)
             holder.itemView.context.startActivity(intent)
         }
 
