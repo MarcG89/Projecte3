@@ -32,7 +32,7 @@ class AlbumActivity : AppCompatActivity(){
     private lateinit var adapter: AlbumAdapter
     private lateinit var recyclerView: RecyclerView
     // API URL
-    private val URL_API : String = "http://192.168.1.60:5180/"
+    private val URL_API : String = "http://172.23.2.141:5180/"
     val retrofit = Retrofit.Builder()
         .baseUrl(URL_API)
         .addConverterFactory(GsonConverterFactory.create())
@@ -43,8 +43,12 @@ class AlbumActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         binding = AlbumListActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
         recyclerView = binding.recyclerViewAlbums
         NavegationFunctions()
+
+
         lifecycleScope.launch {
             GetAllAlbumsFromCloud()
             PutAlbumsToRecicleView()
@@ -74,7 +78,7 @@ class AlbumActivity : AppCompatActivity(){
                                         val image = imageResponse.body()?.byteStream()
                                         if (image != null) {
                                             val bitmap = BitmapFactory.decodeStream(imageResponse.body()?.byteStream())
-                                            val albumItem = Album(albumName,2020, imageID, bitmap, albumList[i].backCoverID.toString())
+                                            val albumItem = Album(albumName,albumList[i].year, imageID, bitmap, albumList[i].backCoverID.toString())
                                             AlbumList.add(albumItem)
                                             recyclerView.adapter?.notifyDataSetChanged()
                                         }

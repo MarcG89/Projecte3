@@ -50,7 +50,7 @@ class CurrentActivity : AppCompatActivity() {
         getMusic()
     }
 
-    private fun initListener() {
+    fun initListener() {
         binding.ListCloud.setOnClickListener {
             val intent = Intent(this@CurrentActivity, CloudMusicActivity::class.java)
             startActivity(intent)
