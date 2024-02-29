@@ -9,7 +9,7 @@
     <Grid>
         <StackPanel VerticalAlignment="Center">
             <Label Content="Títol del album" />
-            <TextBox x:Name="TitleAlbumInf" Height="35" />
+            <ComboBox x:Name="ComboBoxAlbums" Width="120" SelectionChanged="ComboBox_SelectionChanged"/>
             <Label Content="Any del album" />
             <TextBox x:Name="YearAlbumInf" Height="35" IsReadOnly="True" />
             <Label Content="Gènere" Margin="0,10,0,0" />
