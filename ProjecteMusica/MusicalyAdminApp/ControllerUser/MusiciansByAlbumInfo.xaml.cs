@@ -24,38 +24,52 @@ namespace MusicalyAdminApp.ControllerUser
     {
         private Apisql apisql;
         private List<Album> albums;
+        private List<Song> cancons;
+        private List<Play> Plays;
+        private List<Musician> Musicians;
         private List<string> titolsAlbums;
 
         public MusiciansByAlbumInfo()
         {
             InitializeComponent();
+            this.ObtenirAlbums();
         }
 
         /// <summary>
-        /// Obtenim els titols dels Albums obtenint-los de l'array d'Albums
+        /// Guarda els titols dels Albums juntament amb les seves cancons 
+        /// afagant-los de l'array d'Albums
         /// </summary>
-        private async void ObtenirTitolsAlbums()
+        private async void ObtenirDadesAlbums()
         {
             for(int i = 0; i < this.albums.Count; i++)
             {
                 this.titolsAlbums.Add(this.albums[i].Titol);
+
+                for (int y = 0; y < this.albums[i].Songs.Count; y++)
+                {
+                    this.cancons.Add(this.albums[i].Songs.ToList()[y]);
+                }
             }
         }
 
         /// <summary>
-        /// Obtenim tots els Albums fent una crida a l'API
+        /// Guarda tots els Albums fent una crida a l'API
         /// </summary>
         private async void ObtenirAlbums()
         {
             this.albums = await this.apisql.GetAlbums();
-            this.ObtenirTitolsAlbums();
+            this.ObtenirDadesAlbums();
             this.ComboBoxAlbums.ItemsSource = this.titolsAlbums;
+            
         }
 
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (this.ComboBoxAlbums.selectedItem != null)
+            {
 
+            }
         }
     }
 }
