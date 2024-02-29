@@ -2,7 +2,7 @@
 function DockerInstall {
     Start-Process -Wait -FilePath ".\Dependencies\DockerDesktopInstaller.exe"
 }
-# Fucntion that Validates de Installation of Docker
+# Function that Validates de Installation of Docker
 function DockerValidation {
     if (Test-Path "C:\Program Files\Docker\Docker\Docker Desktop.exe") {
         return $true
@@ -150,19 +150,21 @@ function ApiConfiguration {
 }
 # ShowHelp does the documentation of the script
 function ShowHelp {
-    Write-Host "Este script realiza la instalación de Docker y configura los contenedores necesarios."
-    Write-Host "Uso: .\Instalador.ps1 -Opcion <Opcion> -IPMongo <IP> -IPSQL <IP> [-UsernameSQL <Username>] [-PasswordSQL <Password>] [-UsernameMongo <Username>] [-PasswordMongo <Password>] [-UsernameGridFs <Username>] [-PasswordGridFS <Password>] [--help]"
-    Write-Host "Opciones:"
-    Write-Host "  -Opcion        : Opcion para elegir el tipo de contenedor (mongo, postgres, mssql, mysql)"
-    Write-Host "  -IPMongo       : IP para el contenedor MongoDB"
-    Write-Host "  -IPSQL         : IP para SQL"
-    Write-Host "  -UsernameSQL   : (Opcional) Nombre de usuario para SQL (Por defecto: SA)"
-    Write-Host "  -PasswordSQL   : (Opcional) Contraseña para SQL (Por defecto: Passw0rd!)"
-    Write-Host "  -UsernameMongo : (Opcional) Nombre de usuario para MongoDB (Por defecto: root)"
-    Write-Host "  -PasswordMongo : (Opcional) Contraseña para MongoDB (Por defecto: a)"
-    Write-Host "  -UsernameGridFs: (Opcional) Nombre de usuario para GridFS (Por defecto: root)"
-    Write-Host "  -PasswordGridFS: (Opcional) Contraseña para GridFS (Por defecto: a)"
-    Write-Host "  --help         : Muestra esta ayuda"
+    Write-Host @"
+        Este script realiza la instalación de Docker y configura los contenedores necesarios.
+        Uso: .\Instalador.ps1 -Opcion <Opcion> -IPMongo <IP> -IPSQL <IP> [-UsernameSQL <Username>] [-PasswordSQL <Password>] [-UsernameMongo <Username>] [-PasswordMongo <Password>] [-UsernameGridFs <Username>] [-PasswordGridFS <Password>] [--help]
+        Opciones:
+        -Opcion        : Opcion para elegir el tipo de contenedor (mongo, postgres, mssql, mysql)
+        -IPMongo       : IP para el contenedor MongoDB
+        -IPSQL         : IP para SQL
+        -UsernameSQL   : (Opcional) Nombre de usuario para SQL (Por defecto: SA)
+        -PasswordSQL   : (Opcional) Contrasena para SQL (Por defecto: Passw0rd!)
+        -UsernameMongo : (Opcional) Nombre de usuario para MongoDB (Por defecto: root)
+        -PasswordMongo : (Opcional) Contrasena para MongoDB (Por defecto: a)
+        -UsernameGridFs: (Opcional) Nombre de usuario para GridFS (Por defecto: root)
+        -PasswordGridFS: (Opcional) Contrasena para GridFS (Por defecto: a)
+        --help         : Muestra esta ayuda
+"@ 
 }
 # MoveFiles move the instalation files to the output that the user introduce (except the instalation of Docker)
 #param: OutputPath (is the output path that the user introduce)
@@ -170,7 +172,6 @@ function MoveFiles {
     param (
         [string]$OutputPath
     )
-
     Move-Item -Path ".\APIS\ApiMongoMusica" -Destination $OutputPath
     Move-Item -Path ".\APIS\ApiMusica" -Destination $OutputPath
     Move-Item -Path ".\APIS\ApiMusicInfo" -Destination $OutputPath
@@ -190,13 +191,9 @@ function MoveFiles {
 # param: ALL (all the params are documeted in ShowHelp)
 function Main {
     param (
-        [Parameter(Mandatory=$true)]
         [string]$Opcion,
-        [Parameter(Mandatory=$true)]
         [string]$IPMongo,
-        [Parameter(Mandatory=$true)]
         [string]$IPSQL,
-        [Parameter(Mandatory=$true)]
         [string]$OutputRoute,
         [string]$UsernameSQL,
         [string]$PasswordSQL,
@@ -205,10 +202,16 @@ function Main {
         [string]$UsernameGridFs,
         [string]$PasswordGridFS
         
-
     )
-    $isInstalled2 = DockerValidation
-    if ($isInstalled2) {
+
+    if (-not ($PSBoundParameters.ContainsKey('Opcion') -and
+              $PSBoundParameters.ContainsKey('IPMongo') -and
+              $PSBoundParameters.ContainsKey('IPSQL') -and
+              $PSBoundParameters.ContainsKey('OutputRoute'))) {
+        Write-Host "Falta uno o mas parametros obligatorios. Revise la llamada al script. Utiliza el comando --help para saber la funcion"
+        return
+    }
+    if (DockerValidation) {
         DockerExecutionValidator
         ContainerInstallation -Opcion mongo
         ContainerInstallation -Opcion $Opcion
