@@ -1,0 +1,21 @@
+version: '3.1'
+
+services:
+
+  postgres:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: a
+      POSTGRES_DB: initial
+    ports:
+      - "5432:5432"
+    volumes:
+      - ../postgresql_data:/var/lib/postgresql/data
+    networks:
+      - code-network
+
+networks:
+  code-network:
+    driver: bridge

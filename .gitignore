@@ -1,6 +1,7 @@
 ProjecteMusica/API/ApiMongoMusica/bin
 ProjecteMusica/API/ApiMongoMusica/obj
 ProjecteMusica/API/ApiMongoMusica/.vs
+ProjecteMusica/API/apiMusicInfo/.vs
 ProjecteMusica/API/apiMusicInfo/bin
 ProjecteMusica/API/apiMusicInfo/obj
 ProjecteMusica/API/apiMusica/.vs
@@ -27,3 +28,4 @@ Projecte3/ProjecteMusica/SocketClient/bin
 Projecte3/ProjecteMusica/SocketClient/obj
 Projecte3/ProjecteMusica/Testing/bin
 Projecte3/ProjecteMusica/Testing/obj
+ProjecteMusica/InstaladorPowershell/Dependencies/DockerDesktopInstaller
