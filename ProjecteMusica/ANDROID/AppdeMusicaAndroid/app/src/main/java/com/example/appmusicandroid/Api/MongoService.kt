@@ -12,4 +12,6 @@ interface MongoService {
     fun getAllAlbums(): Call<List<Album>>
     @GET("api/v1/Album/getFrontCover/{frontCoverId}")
     fun getFrontCover(@Path("frontCoverId") frontCoverId: String): Call<ResponseBody>
+    @GET("api/v1/Album/getBackCover/{backCoverId}")
+    fun getBackCover(@Path("backCoverId") backCoverId: String): Call<ResponseBody>
 }
