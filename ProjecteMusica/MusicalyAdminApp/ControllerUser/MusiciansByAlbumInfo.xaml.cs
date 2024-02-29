@@ -59,17 +59,7 @@ namespace MusicalyAdminApp.ControllerUser
         {
             this.albums = await this.apisql.GetAlbums();
             this.ObtenirDadesAlbums();
-            this.ComboBoxAlbums.ItemsSource = this.titolsAlbums;
             
-        }
-
-
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (this.ComboBoxAlbums.selectedItem != null)
-            {
-
-            }
         }
     }
 }

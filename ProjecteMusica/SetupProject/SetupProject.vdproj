@@ -358,6 +358,20 @@
             "Icon" = "8:_2EB0803CF8F64ADFA6A3510E83B2B128"
             "Feature" = "8:"
             }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_DA357B47106E4403900A99BEB49FAE80"
+            {
+            "Name" = "8:ReproductorInstaller"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_5793BD2E01C542298ACC93E0E1F6B04D"
+            "Folder" = "8:_1854FD643FE1434C98957B824D584E5C"
+            "WorkingFolder" = "8:_1854FD643FE1434C98957B824D584E5C"
+            "Icon" = "8:"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {
