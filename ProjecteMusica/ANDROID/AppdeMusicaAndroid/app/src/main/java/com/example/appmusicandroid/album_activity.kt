@@ -1,12 +1,14 @@
 package com.example.appmusicandroid
+
 import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
-import android.widget.Toast
+import android.widget.TextView
 import com.example.appmusicandroid.Api.AlbumServiceSQL
 import com.example.appmusicandroid.Api.MongoService
 import com.example.appmusicandroid.Model.Album
+import com.example.appmusicandroid.databinding.ActivityAlbumBinding
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
@@ -16,31 +18,38 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class album_activity : AppCompatActivity() {
 
-    private val URL_API : String = "http://172.23.2.141:5095/"
+    private val URL_API: String = "http://172.23.2.141:5095/"
+    private lateinit var binding: ActivityAlbumBinding
 
     private val retrofit = Retrofit.Builder()
         .baseUrl(URL_API)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
     private val albumServiceSQL: AlbumServiceSQL = retrofit.create(AlbumServiceSQL::class.java)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_album)
-
+        binding = ActivityAlbumBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val name = intent.extras?.getString("Name")
-        getFrontCover()
-        getAlbumByNameAndYear(name.toString())
+        binding.albumName.text = name
+        getAndSetCovers()
+
     }
-    private fun getFrontCover(){
+
+    private fun getAndSetCovers() {
         val retrofit2 = Retrofit.Builder()
-            .baseUrl("http://172.23.2.141:5180/")
+            .baseUrl("http://192.168.1.60:5180/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         val mongoService: MongoService = retrofit2.create(MongoService::class.java)
 
-        val frontimg = findViewById<ImageView>(R.id.frontCover)
+        val frontimg = binding.frontCover
+        val backimg = binding.backCover
+
         val frontID = intent.extras?.getString("FrontCover")
+        val backID = intent.extras?.getString("BackCover")
         mongoService.getFrontCover(frontID.toString()).enqueue(object : Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, imageResponse: Response<ResponseBody>) {
                 if (imageResponse.isSuccessful) {
@@ -53,27 +62,21 @@ class album_activity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                // Manejar errores de red u otros errores aquí
             }
         })
-
-    }
-    private fun getAlbumByNameAndYear(title: String) {
-        albumServiceSQL.getAlbum(title).enqueue(object : Callback<Album> {
-            override fun onResponse(call: Call<Album>, response: Response<Album>) {
-                if (response.isSuccessful) {
-                    val album = response.body()
-                    if (album != null) {
-                        // posar el nom de les cançons
-                    } else {
+        mongoService.getBackCover(backID.toString()).enqueue(object : Callback<ResponseBody> {
+            override fun onResponse(call: Call<ResponseBody>, imageResponse: Response<ResponseBody>) {
+                if (imageResponse.isSuccessful) {
+                    val image = imageResponse.body()?.byteStream()
+                    if (image != null) {
+                        val bitmap = BitmapFactory.decodeStream(imageResponse.body()?.byteStream())
+                        backimg.setImageBitmap(bitmap)
                     }
-                } else {
                 }
             }
 
-            override fun onFailure(call: Call<Album>, t: Throwable) {
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
             }
         })
     }
-
 }
