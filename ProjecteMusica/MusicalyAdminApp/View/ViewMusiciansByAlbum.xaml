@@ -36,11 +36,23 @@
         <Border Grid.Row="1" Margin="10,10,10,10"  BorderBrush="Black" BorderThickness="1" CornerRadius="15" Padding="10">
             <StackPanel>
                 <TextBlock FontWeight="Bold" FontSize="16"><Run Text="Músics:"/></TextBlock>
+                <ListView x:Name="songListView" Background="Transparent">
+                    <ListView.View>
+                        <GridView>
+                            <!-- Define columns for Name, Band, and Plays -->
+                            <GridViewColumn Header="UID" DisplayMemberBinding="{Binding UID}" />
+                            <GridViewColumn Header="Titol" DisplayMemberBinding="{Binding Title}" />
+                            <GridViewColumn Header="Idioma" DisplayMemberBinding="{Binding Language}" />
+                            <GridViewColumn Header="Duracio" DisplayMemberBinding="{Binding Duracio}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
                 <ListBox x:Name="ListBoxMusicians" Background="Transparent" BorderBrush="red">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal" Margin="5">
                                 <TextBlock Margin="10,0,0,0" Text="{Binding AlbumName}" VerticalAlignment="Center" />
+                                
                             </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
