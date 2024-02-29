@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.appmusicandroid.R
 import com.example.appmusicandroid.Model.Album
-import com.example.appmusicandroid.View.AlbumActivity
+import com.example.appmusicandroid.album_activity
 
 class AlbumAdapter(private val albums: List<Album>) : RecyclerView.Adapter<AlbumAdapter.AlbumViewHolder>() {
 
@@ -29,7 +29,11 @@ class AlbumAdapter(private val albums: List<Album>) : RecyclerView.Adapter<Album
             .into(holder.albumImageView)
 
         holder.itemView.setOnClickListener {
-            val intent = Intent(holder.itemView.context, AlbumActivity::class.java)
+
+            val intent = Intent(holder.itemView.context, album_activity::class.java)
+            intent.putExtra("Name", album.name)
+            intent.putExtra("Year", album.year)
+            intent.putExtra("FrontCover", album.frontCoverID)
             holder.itemView.context.startActivity(intent)
         }
 
