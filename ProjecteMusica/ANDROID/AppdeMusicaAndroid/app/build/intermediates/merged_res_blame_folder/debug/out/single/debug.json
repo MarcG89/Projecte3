@@ -1,0 +1,314 @@
+[
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\anim_rigthtoleft1.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\anim\\rigthtoleft1.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_ic_previous.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\ic_previous.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_menurow.png.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\menurow.png"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_newsong.png.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\newsong.png"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_shuffle.png.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\shuffle.png"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\layout_activity_music_player.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\layout\\activity_music_player.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\layout_dialog_add_playlist.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\layout\\dialog_add_playlist.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_busca.png.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\busca.png"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\menu_playlist_menu.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\menu\\playlist_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\layout_activity_playlist.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\layout\\activity_playlist.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_songcover.png.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\songcover.png"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_ic_search.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\ic_search.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_dashboard.png.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\dashboard.png"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_img.png.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\img.png"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\layout_popup_song_list.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\layout\\popup_song_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\layout_album_list_activity.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\layout\\album_list_activity.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_posterimagen.webp.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\posterimagen.webp"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_albumcover.png.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\albumcover.png"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_plus.png.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\plus.png"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_cover.png.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\cover.png"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_gardient.png.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\gardient.png"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_previous.png.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\previous.png"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_backplayer.png.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\backplayer.png"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\layout_current_recycler_row.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\layout\\current_recycler_row.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_seek_bar_background.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\seek_bar_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\anim_rigthtoleft2.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\anim\\rigthtoleft2.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_ic_pause.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\ic_pause.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_headphones.png.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\headphones.png"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\navigation_nav_graph.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\navigation\\nav_graph.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_waves.png.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\waves.png"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\anim_lefttorigth1.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\anim\\lefttorigth1.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_more.png.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\more.png"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_fotoartista.png.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\fotoartista.png"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\layout_current_playlist_row.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\layout\\current_playlist_row.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_playlists.png.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\playlists.png"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_search_background.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\search_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_heart.png.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\heart.png"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\layout_activity_play_cloud_music.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\layout\\activity_play_cloud_music.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\layout_activity_current.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\layout\\activity_current.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_playllista.png.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\playllista.png"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_icshuffle.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\icshuffle.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_edittextshape.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\edittextshape.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\layout_activity_album.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\layout\\activity_album.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_arrow_black.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\arrow_black.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\anim_lefttorigth2.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\anim\\lefttorigth2.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_custom_search_view_background.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\custom_search_view_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_recycler_background.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\recycler_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_pause.png.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\pause.png"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_ic_start.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\ic_start.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_listsongs.png.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\listsongs.png"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_back.png.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\back.png"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_playlist.png.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\playlist.png"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\layout_activity_cloud_music.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\layout\\activity_cloud_music.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_ic_next.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\ic_next.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\layout_activity_playlist_song.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\layout\\activity_playlist_song.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_play.png.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\play.png"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_ic_stop.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\ic_stop.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_upload.png.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\upload.png"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\drawable_albums.png.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\drawable\\albums.png"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-merged_res-52:\\layout_activity_upload_song.xml.flat",
+        "source": "C:\\Users\\fdily\\.gradle\\daemon\\8.0\\com.example.appmusicandroid.app-main-54:\\layout\\activity_upload_song.xml"
+    },
+    {
+        "merged": "com.example.appmusicandroid.app-merged_res-52:/layout_activity_album.xml.flat",
+        "source": "com.example.appmusicandroid.app-main-54:/layout/activity_album.xml"
+    }
+]
