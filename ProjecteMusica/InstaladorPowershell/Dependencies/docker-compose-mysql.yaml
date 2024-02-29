@@ -1,0 +1,20 @@
+version: '3.1'
+
+services:
+
+  mysql:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: a
+      MYSQL_DATABASE: initial
+    ports:
+      - "3306:3306"
+    volumes:
+      - ../mysqldata:/var/lib/mysql
+    networks:
+      - code-network
+
+networks:
+  code-network:
+    driver: bridge
