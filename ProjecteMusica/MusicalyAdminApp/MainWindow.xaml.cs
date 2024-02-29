@@ -279,6 +279,19 @@ namespace MusicalyAdminApp
         }
 
         /// <summary>
+        /// Event handler for the "List Songs by Album" button click.
+        /// Opens the ViewMusiciansByAlbum window.
+        /// </summary>
+        /// <param name="sender">The event sender.</param>
+        /// <param name="e">The event arguments.</param>
+        private void btnListSongs_Click(object sender, RoutedEventArgs e)
+        {
+            ViewMusiciansByAlbum vma = new ViewMusiciansByAlbum();
+            vma.Show();
+        }
+
+
+        /// <summary>
         /// Funció que s'executa en el moment de carregar-se el MainWindow, on es comprova
         /// si tenim el Docker instal·lat mitjançant la comanda "docker version". Si ja
         /// el tens instal·lat, t'obrirà la MainWindow. En cas contrari, t'obrirà la 

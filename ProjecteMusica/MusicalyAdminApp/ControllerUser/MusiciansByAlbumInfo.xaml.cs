@@ -32,6 +32,7 @@ namespace MusicalyAdminApp.ControllerUser
         public MusiciansByAlbumInfo()
         {
             InitializeComponent();
+            this.apisql = new Apisql();
             this.ObtenirAlbums();
         }
 

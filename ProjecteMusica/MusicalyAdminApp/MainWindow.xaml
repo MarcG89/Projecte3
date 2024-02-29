@@ -36,6 +36,9 @@
                     <Button Content="Bands" Click="btnBandas_Click" Margin="0,0,0,5"/>
                     <Button Content="Musicians" Click="btnMusicians_Click" Margin="0,0,0,5"/>
                     <Button Content="Instruments" Click="btnInstruments_Click" Margin="0,0,0,5"/>
+                    
+                    <TextBlock Text="Llistats" FontWeight="Bold" FontSize="16"/>
+                    <Button Content="List Songs by Album" Click="btnListSongs_Click"/>
                 </StackPanel>
             </Border>
 
