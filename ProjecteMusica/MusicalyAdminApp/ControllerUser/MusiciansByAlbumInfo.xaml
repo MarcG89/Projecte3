@@ -9,8 +9,6 @@
         <StackPanel VerticalAlignment="Center">
             <Label Content="Nom de l'Àlbum" />
             <TextBox x:Name="NameAlbumInf" Height="35" />
-            <Label Content="Any de l'Àlbum" />
-            <TextBox x:Name="YearAlbumInf" Height="35" />
         </StackPanel>
     </Grid>
 </UserControl>

@@ -25,7 +25,7 @@ namespace MusicalyAdminApp.View
     {
         private Apisql apisql;
         private List<Album> albums;
-        private JsonObject canconsOriginals;
+        private SongOriginal canconsOriginals;
         private List<Song> cancons;
         private List<SongListView> canconsListView;
         private List<Play> Plays;
@@ -61,20 +61,22 @@ namespace MusicalyAdminApp.View
         /// </summary>
         private async void SongsToSongsListView()
         {
-            for (int i = 0; i < this.cancons.Count; i++)
+            if (this.cancons != null)
             {
-                SongListView songListView = new SongListView();
-                songListView.UID = this.cancons[i].UID;
-                songListView.Title = this.cancons[i].Title;
-                songListView.Language = this.cancons[i].Language;
-                songListView.Duration = this.cancons[i].Duration;
+                for (int i = 0; i < this.cancons.Count; i++)
+                {
+                    SongListView songListView = new SongListView();
+                    songListView.UID = this.cancons[i].UID;
+                    songListView.Title = this.cancons[i].Title;
+                    songListView.Language = this.cancons[i].Language;
+                    songListView.Duration = this.cancons[i].Duration;
 
-                this.canconsListView.Add(
-                    songListView
-                );
+                    this.canconsListView.Add(
+                        songListView
+                    );
 
+                }
             }
-            MessageBox.Show(this.canconsListView.ToString());
         }
 
         /// <summary>
@@ -84,12 +86,13 @@ namespace MusicalyAdminApp.View
         /// <param name="e">The event arguments.</param>
         private async void btnObtenirCanconsAlbums_Click(object sender, RoutedEventArgs e)
         {
+            this.cancons = new List<Song>();
             if (!string.IsNullOrEmpty(this.InfMusiciansByAlbum.NameAlbumInf.Text))
             {
-                this.cancons = await this.apisql.GetSongsAlbumByName(this.InfMusiciansByAlbum.NameAlbumInf.Text);
-                /*this.cancons = this.canconsOriginals.values.ToList();
+                this.canconsOriginals = await this.apisql.GetSongsAlbumByName(this.InfMusiciansByAlbum.NameAlbumInf.Text);
+                this.cancons = this.canconsOriginals.values;
                 this.SongsToSongsListView();
-                this.songListView.ItemsSource = this.canconsListView;*/
+                this.songListView.ItemsSource = this.canconsListView;
             }
             else
             {

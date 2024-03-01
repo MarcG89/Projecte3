@@ -8,6 +8,7 @@ using System.Text;
 using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using System.Windows;
 using MusicalyAdminApp.API.APISQL.Taules;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -294,27 +295,27 @@ namespace MusicalyAdminApp.API.APISQL
         /// </summary>
         /// <param name="name">The Album's name from which we want to get its Songs.</param>
         /// <returns>List of SongsOriginals.</returns>
-        public async Task<List<Song>> GetSongsAlbumByName(string name)
+        public async Task<SongOriginal> GetSongsAlbumByName(string name)
         {
             try
             {
-                string endpoint = "http://172.23.2.141:5095/api/Album/" + name + "/songs";
+                string endpoint = "http://localhost:5095/api/Album/" + name + "/songs";
                 HttpResponseMessage response = await client.GetAsync(endpoint);
                 response.EnsureSuccessStatusCode();
                 string responseJson = await response.Content.ReadAsStringAsync();
 
                 if (!string.IsNullOrEmpty(responseJson))
                 {
-                    var songs = JsonConvert.DeserializeObject<List<Song>>(responseJson);
+                    var songs = JsonConvert.DeserializeObject<SongOriginal>(responseJson);
                     return songs;
                 }
 
-                return new List<Song>();
+                return new SongOriginal();
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Error during GetSongsAlbumByName request: {ex.Message}");
-                return new List<Song>();
+                return new SongOriginal();
             }
         }
 
