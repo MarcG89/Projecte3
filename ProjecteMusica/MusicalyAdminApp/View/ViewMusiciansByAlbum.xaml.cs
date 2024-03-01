@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Text.Json.Nodes;
 
 namespace MusicalyAdminApp.View
 {
@@ -24,7 +25,7 @@ namespace MusicalyAdminApp.View
     {
         private Apisql apisql;
         private List<Album> albums;
-        private SongOriginal canconsOriginals;
+        private JsonObject canconsOriginals;
         private List<Song> cancons;
         private List<SongListView> canconsListView;
         private List<Play> Plays;
@@ -73,6 +74,7 @@ namespace MusicalyAdminApp.View
                 );
 
             }
+            MessageBox.Show(this.canconsListView.ToString());
         }
 
         /// <summary>
@@ -84,10 +86,10 @@ namespace MusicalyAdminApp.View
         {
             if (!string.IsNullOrEmpty(this.InfMusiciansByAlbum.NameAlbumInf.Text))
             {
-                this.canconsOriginals = await this.apisql.GetSongsAlbumByName(this.InfMusiciansByAlbum.NameAlbumInf.Text);
-                this.cancons = this.canconsOriginals.values;
+                this.cancons = await this.apisql.GetSongsAlbumByName(this.InfMusiciansByAlbum.NameAlbumInf.Text);
+                /*this.cancons = this.canconsOriginals.values.ToList();
                 this.SongsToSongsListView();
-                this.songListView.ItemsSource = this.canconsListView;
+                this.songListView.ItemsSource = this.canconsListView;*/
             }
             else
             {

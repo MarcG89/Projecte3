@@ -8,7 +8,7 @@ namespace MusicalyAdminApp.API.APISQL.Taules
 {
      public class SongOriginal
     {
-        public int Id { get; set; }
-        public List<Song> values { get; set; } = new List<Song>();
+        public int id { get; set; }
+        public ICollection<Song> values { get; set; }
     }
 }

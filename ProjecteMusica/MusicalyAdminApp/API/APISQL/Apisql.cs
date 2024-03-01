@@ -5,6 +5,8 @@ using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using System.Text.Json.Nodes;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using MusicalyAdminApp.API.APISQL.Taules;
 using Newtonsoft.Json;
@@ -292,29 +294,30 @@ namespace MusicalyAdminApp.API.APISQL
         /// </summary>
         /// <param name="name">The Album's name from which we want to get its Songs.</param>
         /// <returns>List of SongsOriginals.</returns>
-        public async Task<SongOriginal> GetSongsAlbumByName(string name)
+        public async Task<List<Song>> GetSongsAlbumByName(string name)
         {
             try
             {
-                string endpoint = "http://localhost:5095/api/Album/" + name + "/songs";
+                string endpoint = "http://172.23.2.141:5095/api/Album/" + name + "/songs";
                 HttpResponseMessage response = await client.GetAsync(endpoint);
                 response.EnsureSuccessStatusCode();
-                string responseJson = await GetAsync(endpoint);
+                string responseJson = await response.Content.ReadAsStringAsync();
 
-                if (string.IsNullOrEmpty(responseJson))
+                if (!string.IsNullOrEmpty(responseJson))
                 {
-                    return new SongOriginal();
+                    var songs = JsonConvert.DeserializeObject<List<Song>>(responseJson);
+                    return songs;
                 }
 
-                var cancons = JsonConvert.DeserializeObject<SongOriginal>(responseJson);
-                return cancons;
+                return new List<Song>();
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Error during GetSongsAlbumByName request: {ex.Message}");
-                return new SongOriginal();
+                return new List<Song>();
             }
         }
+
 
         /// <summary>
         /// Asynchronously updates an album in the API based on the provided album ID and updated album data.
