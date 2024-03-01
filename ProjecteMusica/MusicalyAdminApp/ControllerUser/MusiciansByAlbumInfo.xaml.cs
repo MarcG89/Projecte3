@@ -33,7 +33,7 @@ namespace MusicalyAdminApp.ControllerUser
         {
             InitializeComponent();
             this.apisql = new Apisql();
-            this.ObtenirAlbums();
+            this.ObtenirCanconsAlbums();
         }
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace MusicalyAdminApp.ControllerUser
         /// <summary>
         /// Guarda tots els Albums fent una crida a l'API
         /// </summary>
-        private async void ObtenirAlbums()
+        private async void ObtenirCanconsAlbums()
         {
             this.albums = await this.apisql.GetAlbums();
             this.ObtenirDadesAlbums();

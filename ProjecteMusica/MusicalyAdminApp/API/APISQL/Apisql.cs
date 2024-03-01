@@ -288,6 +288,32 @@ namespace MusicalyAdminApp.API.APISQL
         }
 
         /// <summary>
+        /// Retrieves information for all albums from the API.
+        /// </summary>
+        /// <returns>List of albums.</returns>
+        public async Task<List<Album>> GetSongsAlbumByName(string name)
+        {
+            try
+            {
+                string endpoint = "api/Album/" + name + "/songs";
+                string responseJson = await GetAsync(endpoint);
+
+                if (string.IsNullOrEmpty(responseJson))
+                {
+                    return new List<Album>();
+                }
+
+                var albums = JsonConvert.DeserializeObject<List<Album>>(responseJson);
+                return albums;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error during GetAlbums request: {ex.Message}");
+                return new List<Album>();
+            }
+        }
+
+        /// <summary>
         /// Asynchronously updates an album in the API based on the provided album ID and updated album data.
         /// </summary>
         /// <param name="id">The unique identifier of the album to be updated.</param>
