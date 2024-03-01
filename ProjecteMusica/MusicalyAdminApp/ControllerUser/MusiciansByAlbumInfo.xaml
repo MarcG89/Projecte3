@@ -7,10 +7,10 @@
              mc:Ignorable="d" d:DesignWidth="300" Height="122">
     <Grid>
         <StackPanel VerticalAlignment="Center">
-            <Label Content="Títol de l'Àlbum" />
-            <TextBox x:Name="NameAlbumInf" Height="35" IsReadOnly="True" />
+            <Label Content="Nom de l'Àlbum" />
+            <TextBox x:Name="NameAlbumInf" Height="35" />
             <Label Content="Any de l'Àlbum" />
-            <TextBox x:Name="YearAlbumInf" Height="35" IsReadOnly="True" />
+            <TextBox x:Name="YearAlbumInf" Height="35" />
         </StackPanel>
     </Grid>
 </UserControl>

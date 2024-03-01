@@ -24,6 +24,7 @@ namespace MusicalyAdminApp.View
     {
         private Apisql apisql;
         private List<Album> albums;
+        private SongOriginal canconsOriginals;
         private List<Song> cancons;
         private List<SongListView> canconsListView;
         private List<Play> Plays;
@@ -83,26 +84,15 @@ namespace MusicalyAdminApp.View
         {
             if (!string.IsNullOrEmpty(this.InfMusiciansByAlbum.NameAlbumInf.Text))
             {
-                this.cancons = await this.apisql.GetSongsAlbumByName(this.InfMusiciansByAlbum.NameAlbumInf.Text);
+                this.canconsOriginals = await this.apisql.GetSongsAlbumByName(this.InfMusiciansByAlbum.NameAlbumInf.Text);
+                this.cancons = this.canconsOriginals.values;
                 this.SongsToSongsListView();
-                this.songListView.ItemsSource = (System.Collections.IEnumerable)this.songListView;
+                this.songListView.ItemsSource = this.canconsListView;
             }
             else
             {
                 MessageBox.Show("Nom de l'Àlbum invàlid");
             }
-        }
-
-        /// <summary>
-        /// Toggle the read-only status of the textboxes when the "Edit" 
-        /// button is clicked.
-        /// </summary>
-        /// <param name="sender">The event sender.</param>
-        /// <param name="e">The event arguments.</param>
-        private void btnEdit_Click(object sender, RoutedEventArgs e)
-        {
-            this.InfMusiciansByAlbum.NameAlbumInf.IsReadOnly = !this.InfMusiciansByAlbum.NameAlbumInf.IsReadOnly;
-            this.InfMusiciansByAlbum.YearAlbumInf.IsReadOnly = !this.InfMusiciansByAlbum.YearAlbumInf.IsReadOnly;
         }
     }
 }
