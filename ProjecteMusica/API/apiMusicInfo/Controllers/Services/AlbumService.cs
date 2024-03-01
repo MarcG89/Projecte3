@@ -20,9 +20,9 @@ namespace apiMusicInfo.Services
             return await _context.Albums.ToListAsync();
         }
 
-        public async Task<Album> GetAlbum(string title)
+        public async Task<Album> GetAlbum(string title, int year)
         {
-            return await _context.Albums.FindAsync(title);
+            return await _context.Albums.FindAsync(title, year);
         }
 
         public async Task CreateAlbum(Album album)
@@ -43,5 +43,15 @@ namespace apiMusicInfo.Services
             _context.Albums.Remove(albumToDelete);
             await _context.SaveChangesAsync();
         }
+
+        public async Task<List<Song>> GetSongsByAlbum(string albumTitle)
+        {
+            return await _context.Songs
+                .Include(s => s.Albums) // Incluir la relación con los álbumes
+                .Where(s => s.Albums.Any(a => a.Name == albumTitle)) // Filtrar las canciones que pertenecen al álbum especificado
+                .ToListAsync();
+        }
+
+
     }
 }

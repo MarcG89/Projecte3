@@ -1,74 +1,48 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using apiMusicInfo.Data;
 using apiMusicInfo.Models;
+using Microsoft.EntityFrameworkCore;
 
-
-namespace apiMusicInfo.Controllers.Services
+namespace apiMusicInfo.Services
 {
     public class BandService
     {
-        private readonly DataContext _context;
+        private readonly DataContext _dbContext;
 
-        public BandService(DataContext context)
+        public BandService(DataContext dbContext)
         {
-            _context = context;
+            _dbContext = dbContext;
         }
 
-        public async Task<ActionResult<IEnumerable<Band>>> GetBand()
+        public IEnumerable<Band> GetAllBands()
         {
-            return await _context.Band.ToListAsync();
+            return _dbContext.Bands.ToList();
         }
 
-        public async Task<ActionResult<Band>?> GetBand(string name)
+        public Band GetBand(string name, DateTime foundationDate)
         {
-            //var band = await _context.Band.FindAsync(id);
-            var band = await _context.Band.Include(b => b.Musicians).FirstOrDefaultAsync(b => b.Name == name);
+            return _dbContext.Bands.FirstOrDefault(b => b.Name == name && b.FoundationDate == foundationDate);
+        }
 
-            if (band == null)
-            {
-                return null;
-            }
-
+        public Band CreateBand(Band band)
+        {
+            _dbContext.Bands.Add(band);
+            _dbContext.SaveChanges();
             return band;
         }
 
-        public async Task<IActionResult?> PutBand(string id, Band band)
+        public Band UpdateBand(Band band)
         {
-            if (id != band.Name)
-            {
-                return null;
-            }
-
-            _context.Entry(band).State = EntityState.Modified;
-
+            _dbContext.Entry(band).State = EntityState.Modified;
             try
             {
-                await _context.SaveChangesAsync();
+                _dbContext.SaveChanges();
             }
             catch (DbUpdateConcurrencyException)
             {
-                    throw;
-            }
-
-            return null;
-        }
-
-        public async Task<ActionResult<Band>?> PostBand(Band band)
-        {
-            _context.Band.Add(band);
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (BandExists(band.Name))
+                if (!BandExists(band.Name, band.FoundationDate))
                 {
                     return null;
                 }
@@ -77,27 +51,23 @@ namespace apiMusicInfo.Controllers.Services
                     throw;
                 }
             }
-
-            return null;
+            return band;
         }
 
-        public async Task<ActionResult<Band>?> DeleteBand(string id)
+        public bool DeleteBand(string name, DateTime foundationDate)
         {
-            var band = await _context.Band.FindAsync(id);
+            var band = _dbContext.Bands.FirstOrDefault(b => b.Name == name && b.FoundationDate == foundationDate);
             if (band == null)
-            {
-                return null;
-            }
+                return false;
 
-            _context.Band.Remove(band);
-            await _context.SaveChangesAsync();
-
-            return null;
+            _dbContext.Bands.Remove(band);
+            _dbContext.SaveChanges();
+            return true;
         }
 
-        private bool BandExists(string id)
+        private bool BandExists(string name, DateTime foundationDate)
         {
-            return _context.Band.Any(e => e.Name == id);
+            return _dbContext.Bands.Any(b => b.Name == name && b.FoundationDate == foundationDate);
         }
     }
 }

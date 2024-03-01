@@ -11,7 +11,7 @@ namespace apiMusicInfo.Models
         public string Name { get; set; }=null!;
         [Range(0, 99, ErrorMessage = "La edad debe estar entre 0 y 99.")]
         public int? Age { get; set; }
-        public ICollection<Band>? Bands { get; set; } = new List<Band>();
+        public ICollection<BandMusician> BandMusicians { get; set; } = new List<BandMusician>();
         public ICollection<Play> Plays { get; set; } = new List<Play>();
     }
 }

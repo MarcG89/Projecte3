@@ -1,84 +1,67 @@
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using apiMusicInfo.Data;
 using apiMusicInfo.Models;
-using apiMusicInfo.Controllers.Services;
+using apiMusicInfo.Services;
 
 namespace apiMusicInfo.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
-    public class BandController : ControllerBase
+    [Route("api/[controller]")]
+    public class BandsController : ControllerBase
     {
-        private readonly DataContext _context;
         private readonly BandService _bandService;
 
-        public BandController(DataContext context)
+        public BandsController(BandService bandService)
         {
-            _context = context;
-            _bandService = new BandService(context);
+            _bandService = bandService;
         }
 
-        // GET: api/Band
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Band>>> GetBand()
+        public ActionResult<IEnumerable<Band>> GetBands()
         {
-            return await _bandService.GetBand();
+            var bands = _bandService.GetAllBands();
+            return Ok(bands);
         }
 
-        // GET: api/Band/5
-        [HttpGet("{name}")]
-        public async Task<ActionResult<Band>> GetBand(string name)
+        [HttpGet("{name}/{foundationDate}")]
+        public ActionResult<Band> GetBand(string name, DateTime foundationDate)
         {
-            var band = await _bandService.GetBand(name);
+            var band = _bandService.GetBand(name, foundationDate);
             if (band == null)
-            {
                 return NotFound();
-            }
-
-            return band;
+            return Ok(band);
         }
 
-        // PUT: api/Band/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutBand(string id, Band band)
-        {
-            if (id != band.Name)
-            {
-                return BadRequest();
-            }
-
-            var result = await _bandService.PutBand(id, band);
-
-            return Ok(result);
-        }
-
-        // POST: api/Band
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<IActionResult> PostBand(Band band)
+        public ActionResult<Band> CreateBand(Band band)
         {
-            var result = await _bandService.PostBand(band);
-
-            return CreatedAtAction("GetBand", new { id = band.Name }, band);
+            var createdBand = _bandService.CreateBand(band);
+            return CreatedAtAction(nameof(GetBand), new { name = createdBand.Name, foundationDate = createdBand.FoundationDate }, createdBand);
         }
 
-        // DELETE: api/Band/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteBand(string id)
+        [HttpPut("{name}/{foundationDate}")]
+        public IActionResult UpdateBand(string name, DateTime foundationDate, Band band)
         {
-            var result = await _bandService.DeleteBand(id);
-            if (result == null)
-            {
+            if (name != band.Name || foundationDate != band.FoundationDate)
+                return BadRequest();
+
+            var updatedBand = _bandService.UpdateBand(band);
+            if (updatedBand == null)
                 return NotFound();
-            }
-            return Ok(result);
+
+            return NoContent();
+        }
+
+        [HttpDelete("{name}/{foundationDate}")]
+        public IActionResult DeleteBand(string name, DateTime foundationDate)
+        {
+            var result = _bandService.DeleteBand(name, foundationDate);
+            if (!result)
+                return NotFound();
+            return NoContent();
         }
     }
 }

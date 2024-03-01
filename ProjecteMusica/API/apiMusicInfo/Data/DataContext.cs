@@ -21,10 +21,14 @@ namespace apiMusicInfo.Data
             modelBuilder.ApplyConfiguration(new PlaylistConfigurations());
             modelBuilder.ApplyConfiguration(new InstrumentConfigurations());
             modelBuilder.ApplyConfiguration(new AlbumConfigurations());
+            modelBuilder.ApplyConfiguration(new BandConfigurations());
+            modelBuilder.ApplyConfiguration(new BandMusicianConfigurations());
+
         }
 
-        public DbSet<Musician> Musician { get; set; } = null!;
-        public DbSet<Band> Band { get; set; } = null!;
+        public DbSet<Musician> Musicians { get; set; } = null!;
+        public DbSet<Band> Bands { get; set; } = null!;
+        public DbSet<BandMusician> BandMusicians { get; set; } = null!;
         public DbSet<Song> Songs { get; set; }
         public DbSet<Extension> Extensions { get; set; }
         public DbSet<Playlist> Playlists { get; set; }

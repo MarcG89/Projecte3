@@ -1,4 +1,40 @@
-# Function that install Docker
+param (
+        [string]$Container,
+        [string]$IPMongo,
+        [string]$IPSQL,
+        [string]$OutputRoute,
+        [string]$UsernameSQL,
+        [string]$PasswordSQL,
+        [string]$UsernameMongo,
+        [string]$PasswordMongo,
+        [string]$UsernameGridFs,
+        [string]$PasswordGridFS
+        
+    )
+# ShowHelp does the documentation of the script
+function ShowHelp {
+    Write-Host @"
+        Este script realiza la instalacion de Docker y configura los contenedores necesarios.
+        Uso: .\Instalador.ps1 -Opcion <Opcion> -IPMongo <IP> -IPSQL <IP> [-UsernameSQL <Username>] [-PasswordSQL <Password>] [-UsernameMongo <Username>] [-PasswordMongo <Password>] [-UsernameGridFs <Username>] [-PasswordGridFS <Password>] [--help]
+        Opciones:
+        -Container     : Opcion para elegir el tipo de contenedor (mongo, postgres, mssql, mysql)
+        -IPMongo       : IP para el contenedor MongoDB
+        -IPSQL         : IP para SQL
+        -UsernameSQL   : (Opcional) Nombre de usuario para SQL (Por defecto: SA)
+        -PasswordSQL   : (Opcional) Contrasena para SQL (Por defecto: Passw0rd!)
+        -UsernameMongo : (Opcional) Nombre de usuario para MongoDB (Por defecto: root)
+        -PasswordMongo : (Opcional) Contrasena para MongoDB (Por defecto: a)
+        -UsernameGridFs: (Opcional) Nombre de usuario para GridFS (Por defecto: root)
+        -PasswordGridFS: (Opcional) Contrasena para GridFS (Por defecto: a)
+        --help         : Muestra esta ayuda
+"@ 
+}
+if ($args -contains "--help") {
+    ShowHelp
+    exit
+}
+
+#Function that install Docker
 function DockerInstall {
     Start-Process -Wait -FilePath ".\Dependencies\DockerDesktopInstaller.exe"
 }
@@ -31,30 +67,37 @@ function DockerExecutionValidator {
 # Param: $Opcion (is the second container you want to create)
 function ContainerInstallation {
     param (
-        [string]$Opcion
+        [string]$Opcio
     )
-
     $dockerComposeCommand = Get-Command docker-compose -ErrorAction SilentlyContinue
     if ($dockerComposeCommand -eq $null) {
         Write-Host "El comando 'docker-compose' no está instalado. Por favor, instale Docker Compose para continuar."
         return
     }
 
-    switch ($Opcion) {
+    switch ($Opcio) {
         "mongo" {
             Start-Process docker-compose -ArgumentList "-f .\Dependencies\docker-compose-mongo.yaml up" -NoNewWindow -Wait
+            Start-Sleep -Seconds 15
+            docker-compose -f .\Dependencies\docker-compose-mongo.yaml down
         }
         "postgres" {
             Start-Process docker-compose -ArgumentList "-f .\Dependencies\docker-compose-postgres.yaml up" -NoNewWindow -Wait
+            Start-Sleep -Seconds 15
+            docker-compose -f .\Dependencies\docker-compose-postgres.yaml down
         }
         "mssql" {
             Start-Process docker-compose -ArgumentList "-f .\Dependencies\docker-compose-mssql.yaml up" -NoNewWindow -Wait
+            Start-Sleep -Seconds 15
+            docker-compose -f .\Dependencies\docker-compose-mssql.yaml down
         }
         "mysql" {
             Start-Process docker-compose -ArgumentList "-f .\Dependencies\docker-compose-mysql.yaml up" -NoNewWindow -Wait
+            Start-Sleep -Seconds 15
+            docker-compose -f .\Dependencies\docker-compose-mysql.yaml down
         }
         Default {
-            Write-Error "La opción introducida es inválida"
+            Write-Error "La opción introducida es invalida"
         }
     }
 }
@@ -93,6 +136,7 @@ function EdicioMongo {
 function EdicioSql {
     param (
         [string]$IP = "localhost",
+        [string]$Port = "5042",
         [string]$Username = "SA",
         [String]$Password = "Passw0rd!"
     )
@@ -108,8 +152,8 @@ function EdicioSql {
     Set-Content -Path $filePath1 -Value $newContent1
     $filePath2 = ".\APIS\ApiMusicInfo\Properties\launchSettings.json"
     $content2 = Get-Content -Path $filePath2 -Raw | ConvertFrom-Json
-    $content2.profiles.http.applicationUrl = "http://${IP}:5042"
-    $content2.profiles.https.applicationUrl = "https://${IP}:7145;http://${IP}:5042"
+    $content2.profiles.http.applicationUrl = "http://${IP}:${Port}"
+    $content2.profiles.https.applicationUrl = "https://${IP}:7145;http://${IP}:${Port}"
     $content2.iisSettings.iisExpress.applicationUrl = "http://${IP}:53760"
     $newContent2 = $content2 | ConvertTo-Json -Depth 10
     Set-Content -Path $filePath2 -Value $newContent2
@@ -148,40 +192,23 @@ function ApiConfiguration {
     EdicioSql
     EdicioGridFs
 }
-# ShowHelp does the documentation of the script
-function ShowHelp {
-    Write-Host @"
-        Este script realiza la instalación de Docker y configura los contenedores necesarios.
-        Uso: .\Instalador.ps1 -Opcion <Opcion> -IPMongo <IP> -IPSQL <IP> [-UsernameSQL <Username>] [-PasswordSQL <Password>] [-UsernameMongo <Username>] [-PasswordMongo <Password>] [-UsernameGridFs <Username>] [-PasswordGridFS <Password>] [--help]
-        Opciones:
-        -Opcion        : Opcion para elegir el tipo de contenedor (mongo, postgres, mssql, mysql)
-        -IPMongo       : IP para el contenedor MongoDB
-        -IPSQL         : IP para SQL
-        -UsernameSQL   : (Opcional) Nombre de usuario para SQL (Por defecto: SA)
-        -PasswordSQL   : (Opcional) Contrasena para SQL (Por defecto: Passw0rd!)
-        -UsernameMongo : (Opcional) Nombre de usuario para MongoDB (Por defecto: root)
-        -PasswordMongo : (Opcional) Contrasena para MongoDB (Por defecto: a)
-        -UsernameGridFs: (Opcional) Nombre de usuario para GridFS (Por defecto: root)
-        -PasswordGridFS: (Opcional) Contrasena para GridFS (Por defecto: a)
-        --help         : Muestra esta ayuda
-"@ 
-}
+
 # MoveFiles move the instalation files to the output that the user introduce (except the instalation of Docker)
 #param: OutputPath (is the output path that the user introduce)
 function MoveFiles {
     param (
         [string]$OutputPath
     )
-    Move-Item -Path ".\APIS\ApiMongoMusica" -Destination $OutputPath
-    Move-Item -Path ".\APIS\ApiMusica" -Destination $OutputPath
-    Move-Item -Path ".\APIS\ApiMusicInfo" -Destination $OutputPath
-    Move-Item -Path ".\mongodata" -Destination $OutputPath
-    if(Test-Path ".\mysqldata") {
-        Move-Item -Path ".\mysqldata" -Destination $OutputPath
-    } elseif (Test-Path ".\mssqldata") {
-        Move-Item -Path ".\mssqldata" -Destination $OutputPath
-    } elseif (Test-Path ".\postgresql_data") {
-        Move-Item -Path ".\postgresql_data" -Destination $OutputPath
+    Copy-Item -Path ".\APIS\ApiMongoMusica" -Destination $OutputPath -Recurse -Force
+    Copy-Item -Path ".\APIS\ApiMusica" -Destination $OutputPath -Recurse -Force
+    Copy-Item -Path ".\APIS\ApiMusicInfo" -Destination $OutputPath -Recurse -Force
+    Copy-Item -Path "mongodata" -Destination $OutputPath -Recurse -Force
+    if(Test-Path "mysqldata") {
+        Copy-Item -Path "mysqldata" -Destination $OutputPath -Recurse -Force
+    } elseif (Test-Path "mssqldata") {
+        Copy-Item -Path "mssqldata" -Destination $OutputPath -Recurse -Force
+    } elseif (Test-Path "postgresql_data") {
+        Copy-Item -Path "postgresql_data" -Destination $OutputPath -Recurse -Force
     }
 
     
@@ -190,43 +217,26 @@ function MoveFiles {
 # Function Main does de principal job of the script
 # param: ALL (all the params are documeted in ShowHelp)
 function Main {
-    param (
-        [string]$Opcion,
-        [string]$IPMongo,
-        [string]$IPSQL,
-        [string]$OutputRoute,
-        [string]$UsernameSQL,
-        [string]$PasswordSQL,
-        [string]$UsernameMongo,
-        [string]$PasswordMongo,
-        [string]$UsernameGridFs,
-        [string]$PasswordGridFS
-        
-    )
-
-    if (-not ($PSBoundParameters.ContainsKey('Opcion') -and
-              $PSBoundParameters.ContainsKey('IPMongo') -and
-              $PSBoundParameters.ContainsKey('IPSQL') -and
-              $PSBoundParameters.ContainsKey('OutputRoute'))) {
+    if (-not ($Container -and
+              $IPMongo -and
+              $IPSQL -and
+              $OutputRoute)) {
         Write-Host "Falta uno o mas parametros obligatorios. Revise la llamada al script. Utiliza el comando --help para saber la funcion"
         return
     }
     if (DockerValidation) {
         DockerExecutionValidator
-        ContainerInstallation -Opcion mongo
-        ContainerInstallation -Opcion $Opcion
-        ApiConfiguration -Opcion mongo -IP $IPMongo
-        ApiConfiguration -Opcion $Opcion
+        ContainerInstallation -Opcio mongo
+        ContainerInstallation -Opcio $Container
+        ApiConfiguration -Container mongo -IP $IPMongo
+        ApiConfiguration -Container $Container
         MoveFiles -OutputPath $OutputRoute
         Write-Host "Instalacio Finalitzada!"
     } else {
         Write-Host "Error de instalacion de Docker vuelve a ejecutar el programa!"
     }
 }
-if ($args -contains "--help") {
-    ShowHelp
-    exit
-}
+
 $isInstalled1 = DockerValidation
 if ($isInstalled1) {
     Main
