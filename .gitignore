@@ -1,0 +1,50 @@
+ProjecteMusica/API/ApiMongoMusica/bin
+ProjecteMusica/API/ApiMongoMusica/obj
+ProjecteMusica/API/ApiMongoMusica/.vs
+<<<<<<< HEAD
+ProjecteMusica/API/apiMusicInfo/.vs
+ProjecteMusica/API/apiMusicInfo/bin
+ProjecteMusica/API/apiMusicInfo/obj
+ProjecteMusica/API/apiMusica/.vs
+ProjecteMusica/API/ApiMusica/bin
+ProjecteMusica/API/ApiMusica/obj
+ProjecteMusica/API/apiMusicInfo/Migrations
+=======
+ProjecteMusica/API/apiMusicInfo/bin/
+ProjecteMusica/API/apiMusicInfo/obj/
+ProjecteMusica/API/apiMusicInfo/bin/Debug
+ProjecteMusica/API/apiMusicInfo/obj/Debug
+ProjecteMusica/API/apiMusica/.vs
+ProjecteMusica/API/ApiMusica/bin
+ProjecteMusica/API/ApiMusica/obj
+ProjecteMusica/API/apiMusicInfo/Migrations/
+>>>>>>> apisql
+ProjecteMusica/InstaladorWPF/AppSetupFile/.vs
+ProjecteMusica/InstaladorWPF/AppSetupFile/AppSetupFile/bin
+ProjecteMusica/InstaladorWPF/AppSetupFile/AppSetupFile/obj
+ProjecteMusica/MusicalyAdminApp/.vs
+ProjecteMusica/MusicalyAdminApp/bin
+ProjecteMusica/MusicalyAdminApp/obj
+ProjecteMusica/MusicPlayerLibrary/.vs
+ProjecteMusica/MusicPlayerLibrary/bin
+ProjecteMusica/MusicPlayerLibrary/obj
+Projecte3/ProjecteMusica/Client/obj
+Projecte3/ProjecteMusica/Client/bin
+Projecte3/ProjecteMusica/Client/.vs
+Projecte3/ProjecteMusica/MusicPlayerLibrary/bin
+Projecte3/ProjecteMusica/MusicPlayerLibrary/obj
+Projecte3/ProjecteMusica/Server/bin
+Projecte3/ProjecteMusica/Server/obj
+Projecte3/ProjecteMusica/SocketClient/bin
+Projecte3/ProjecteMusica/SocketClient/obj
+Projecte3/ProjecteMusica/Testing/bin
+Projecte3/ProjecteMusica/Testing/obj
+<<<<<<< HEAD
+ProjecteMusica/InstaladorPowershell/Dependencies/DockerDesktopInstaller.exe
+=======
+.vs
+
+
+
+
+>>>>>>> apisql

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".album_activity"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        >
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/frontCover"
+            android:background="@color/black"
+            />
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/backCover"
+            android:background="@color/black"
+            android:layout_alignParentEnd="true"
+            />
+
+        <TextView
+            android:id="@+id/albumName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/frontCover"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="15dp"
+            android:text="Album Name"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/albumName"
+            android:text="year"
+            android:id="@+id/year"
+            android:textAlignment="center"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/albumName"
+            android:layout_marginTop="30dp"
+            android:id ="@+id/songList"
+            tools:listitem="@layout/current_recycler_row"
+            />
+
+    </RelativeLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="@color/red"
+        android:clickable="true"
+        app:srcCompat="@drawable/car_ui_icon_add"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        app:tint="@android:color/white" />
+
+    <LinearLayout
+        android:id="@+id/BarraNavegacion"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="100dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        >
+
+        <ImageView
+            android:id="@+id/Home"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/dashboard" />
+
+        <ImageView
+            android:id="@+id/ListCloud"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/playlist" />
+
+        <ImageView
+            android:id="@+id/Playlists"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/playlists" />
+        <ImageView
+            android:id="@+id/Albums"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/albums" />
+
+        <ImageView
+            android:id="@+id/CrearCanco"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/upload" />
+
+    </LinearLayout>
+</RelativeLayout>
