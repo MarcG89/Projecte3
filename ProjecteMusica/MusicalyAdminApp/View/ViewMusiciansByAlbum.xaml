@@ -27,8 +27,9 @@
                     <ControllerUser:MusiciansByAlbumInfo Width="300" x:Name="InfMusiciansByAlbum"/>
                 </StackPanel>
 
-                <StackPanel Grid.Column="1" VerticalAlignment="Center">
-                    <Button x:Name="SearchBtn" Height="35" Width="60" Content="Search" />
+                <StackPanel Grid.Column="1" VerticalAlignment="Center" Orientation="Vertical">
+                    <Button Content="Edit" Margin="0,0,0,10" Height="35" Width="60" Click="btnEdit_Click"/>
+                    <Button Height="35" Width="60" Content="Search" />
                 </StackPanel>
             </Grid>
         </Border>
@@ -43,7 +44,7 @@
                             <GridViewColumn Header="UID" DisplayMemberBinding="{Binding UID}" />
                             <GridViewColumn Header="Titol" DisplayMemberBinding="{Binding Title}" />
                             <GridViewColumn Header="Idioma" DisplayMemberBinding="{Binding Language}" />
-                            <GridViewColumn Header="Duracio" DisplayMemberBinding="{Binding Duracio}" />
+                            <GridViewColumn Header="Duracio" DisplayMemberBinding="{Binding Duration}" />
                         </GridView>
                     </ListView.View>
                 </ListView>

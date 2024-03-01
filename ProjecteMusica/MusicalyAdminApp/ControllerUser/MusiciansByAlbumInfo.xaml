@@ -8,7 +8,7 @@
     <Grid>
         <StackPanel VerticalAlignment="Center">
             <Label Content="Títol de l'Àlbum" />
-            <TextBox x:Name="TitleAlbumInf" Height="35" IsReadOnly="True" />
+            <TextBox x:Name="NameAlbumInf" Height="35" IsReadOnly="True" />
             <Label Content="Any de l'Àlbum" />
             <TextBox x:Name="YearAlbumInf" Height="35" IsReadOnly="True" />
         </StackPanel>

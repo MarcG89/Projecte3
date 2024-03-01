@@ -288,10 +288,10 @@ namespace MusicalyAdminApp.API.APISQL
         }
 
         /// <summary>
-        /// Retrieves information for all albums from the API.
+        /// Retrieves information for all Songs by Album Name from the API.
         /// </summary>
-        /// <returns>List of albums.</returns>
-        public async Task<List<Album>> GetSongsAlbumByName(string name)
+        /// <returns>List of Songs.</returns>
+        public async Task<List<Song>> GetSongsAlbumByName(string name)
         {
             try
             {
@@ -300,16 +300,16 @@ namespace MusicalyAdminApp.API.APISQL
 
                 if (string.IsNullOrEmpty(responseJson))
                 {
-                    return new List<Album>();
+                    return new List<Song>();
                 }
 
-                var albums = JsonConvert.DeserializeObject<List<Album>>(responseJson);
-                return albums;
+                var cancons = JsonConvert.DeserializeObject<List<Song>>(responseJson);
+                return cancons;
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error during GetAlbums request: {ex.Message}");
-                return new List<Album>();
+                Console.WriteLine($"Error during GetSongsAlbumByName request: {ex.Message}");
+                return new List<Song>();
             }
         }
 
