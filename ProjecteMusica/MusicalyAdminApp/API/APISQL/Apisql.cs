@@ -290,6 +290,7 @@ namespace MusicalyAdminApp.API.APISQL
         /// <summary>
         /// Retrieves information for all Songs by Album Name from the API.
         /// </summary>
+        /// <param name="name">The Album's name from which we want to get its Songs.</param>
         /// <returns>List of Songs.</returns>
         public async Task<List<Song>> GetSongsAlbumByName(string name)
         {

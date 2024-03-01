@@ -22,18 +22,10 @@ namespace MusicalyAdminApp.ControllerUser
     /// </summary>
     public partial class MusiciansByAlbumInfo : UserControl
     {
-        private Apisql apisql;
-        private List<Album> albums;
-        private List<Song> cancons;
-        private List<SongListView> canconsListView;
-        private List<Play> Plays;
-        private List<Musician> Musicians;
-        private List<string> titolsAlbums;
 
         public MusiciansByAlbumInfo()
         {
             InitializeComponent();
-            this.apisql = new Apisql();
         }
     }
 }

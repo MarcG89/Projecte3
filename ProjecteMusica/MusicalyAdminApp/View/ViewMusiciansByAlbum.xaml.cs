@@ -54,14 +54,38 @@ namespace MusicalyAdminApp.View
         }
 
         /// <summary>
-        /// Guarda tots els Albums fent una crida a l'API
+        /// Per cada Song dins l'array de Songs, creem una SongListView que haurem
+        /// d'afegir a la ListView "songListView"
         /// </summary>
-        private async void ObtenirCanconsAlbums()
+        private async void SongsToSongsListView()
+        {
+            for (int i = 0; i < this.cancons.Count; i++)
+            {
+                SongListView songListView = new SongListView();
+                songListView.UID = this.cancons[i].UID;
+                songListView.Title = this.cancons[i].Title;
+                songListView.Language = this.cancons[i].Language;
+                songListView.Duration = this.cancons[i].Duration;
+
+                this.canconsListView.Add(
+                    songListView
+                );
+
+            }
+        }
+
+        /// <summary>
+        /// Guarda les Cancons d'un Album fent clic a al botó de Search
+        /// </summary>
+        /// <param name="sender">The event sender.</param>
+        /// <param name="e">The event arguments.</param>
+        private async void btnObtenirCanconsAlbums_Click(object sender, RoutedEventArgs e)
         {
             if (!string.IsNullOrEmpty(this.InfMusiciansByAlbum.NameAlbumInf.Text))
             {
                 this.cancons = await this.apisql.GetSongsAlbumByName(this.InfMusiciansByAlbum.NameAlbumInf.Text);
-                this.ObtenirDadesAlbums();
+                this.SongsToSongsListView();
+                this.songListView.ItemsSource = (System.Collections.IEnumerable)this.songListView;
             }
             else
             {
@@ -73,8 +97,8 @@ namespace MusicalyAdminApp.View
         /// Toggle the read-only status of the textboxes when the "Edit" 
         /// button is clicked.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The event sender.</param>
+        /// <param name="e">The event arguments.</param>
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
             this.InfMusiciansByAlbum.NameAlbumInf.IsReadOnly = !this.InfMusiciansByAlbum.NameAlbumInf.IsReadOnly;
